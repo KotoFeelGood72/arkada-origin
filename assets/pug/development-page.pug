@@ -1,0 +1,54 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Разработка сайтов'}
+block content_block
+	+singleHead({
+		img: 'development',
+		page: 'Услуги',
+		title: title_inner,
+		btn: true,
+	})
+	section.single_body 
+		.section_in 
+			.single_body_main 
+				+content_block({
+					btn: true,
+					img: 'single/content',
+					txt: true,
+				})
+				+tech
+				.solution_block 
+					h2 Создадим идеальное решение для вашего бизнеса
+					ul.solution_list 
+						-for(i = 0; i < 3; i++)
+							- var img = 'i/single/solution_' + i + '.png'
+							- var title = ['Лендинг', 'Многостраничный сайт', 'Интернет-магазин']
+							li.solution_item 
+								.solution_item_img 
+									img(src=`${img}`, alt="")
+								.solution_item_content 
+									h3=title[i]
+									p Одностраничный сайт, который подойдет для тестирования ниш, продажи товаров, презентации услуг, вашего портфолио.
+									span 60 000
+								.solution_item_link.trigger_popup 
+									button(type="button") Заказать
+				.workSlider_block 
+					+sectionHead({
+						title: 'Другие проекты',
+						class: 'workSlider'
+					})
+					.workSlider_w 
+						.workSlider_slider.swiper 
+							.swiper-wrapper 
+								.swiper-slide 
+									.project_item 
+										a(href="#")
+											.project_item_img
+												img(src="i/project/project.jpg", alt="")
+											.project_item_content 
+												h3 Дизайн интерьера “WP Interior design”
+												ul.project_tag_list 
+													each item in ['Web-разработка', 'Контекстная реклама']
+														li 
+															a(href="#")=`#${item}`

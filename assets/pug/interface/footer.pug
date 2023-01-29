@@ -1,0 +1,48 @@
+footer.footer 
+	.section_in 
+		.footer_main_w 
+			.footer_main 
+				.footer_action 
+					.footer_action_head
+						h6 Оставьте заявку, и мы свяжемся с вами, чтобы обсудить проект!
+					.footer_action_form 
+						form
+							.footer_formInput_group 
+								+input({
+									class: 'footer_input'
+								})
+								+input({
+									class: 'footer_input',
+									place: 'Ваш телефон',
+									type: 'tel'
+								})
+								.footer_mod_textarea.action_input.action_textarea
+									textarea(placeholder="О вашем проекте (необязательно)")
+								.footer_mod_bottom.action_bottom 
+									.footer_mod_btn.action_btn.btn-fill 
+										button(type="button") Отправить
+									.footer_mod_notice.action_notice!='Отправляя форму, вы соглашаетесь с <a href="#" target="_blank" >политикой конфиденциальности.</a>'
+				.footer_info 
+					.footer_info_phone 
+						p Номера телефонов:
+						ul.footer_infoPhone_list 
+							each item in ['+7 995 <span>223-30-41</span>', '+7 995 <span>223-30-41</span>']
+								li 
+									a(href="#")!=item
+					.footer_info_mail 
+						p Почта:
+						.footer_mail_link 
+							a(href="#") arkada.webstudio@yandex.ru
+					.footer_brief_link 
+						a(href="#") Заполнить бриф
+			.footer_bottom 
+				.footer_col_left 
+					.footer_copyright © Все права защищены, 2022
+					.footer_policy 
+						a(href="#") Политика конфиденциальности
+				.footer_col_right 
+					ul.footer_social_list 
+						each item in ['wa', 'tg', 'vk']
+							li 
+								a(href="#")
+									img(src=`i/social/${item}.svg`, alt="")

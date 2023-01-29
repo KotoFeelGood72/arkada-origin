@@ -1,0 +1,79 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Web studio Arkada'}
+block content_block
+	section.hero 
+		.section_in 
+			.hero_main 
+				.hero_content 
+					.hero_title 
+						h1 Web studio Arkada
+					.hero_txt 
+						p Мы разрабатываем web-сайты и интернет-порталы, оказываем услуги по seo-продвижению и контекстной рекламе.
+					.hero_btn.btn-border 
+						button(type="button") Оставить заявку
+				.hero_tag 
+					ul.hero_tag_list
+						each item in ['SEO', 'РЕКЛАМА', 'ДИЗАЙН', 'РАЗРАБОТКА']
+							li 
+								a(href="#")=item
+	section.responcible 
+		.section_in 
+			.responcible_main 
+				.responcible_title 
+					h2 Компания с ответственным подходом к работе
+				.responcible_content 
+					h3 Знаем, что такое бизнес, и полностью погружаемся в задачу клиента.
+					.responcible_txt.global_txt 
+						p Специализируясь на разработке сайтов под ключ и продвижении, мы проводим комплексную работу, которая дает гарантированный результат.
+						p Слаженные действия специалистов позволяют максимально настроить всю работу на реализацию поставленных целей и задач.
+					.responcible_btn.btn-fill
+						a(href="#") В портфолио
+	section.service.homeservice 
+		.section_in 
+			.service_main 
+				.service_title 
+					h3 Наши услуги
+				+service
+	+tech
+	section.action 
+		.section_in 
+			.action_main 
+				.action_content 
+					.action_content_head 
+						h4 Закажите консультацию
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+					ul.action_content_bottom 
+						each item in ['+7 995 223-30-41', 'arkada.webstudio@yandex.ru']
+							li 
+								a(href="#")=item
+				.action_form_w 
+					form.action_form
+						+input({
+							class: 'action_input'
+						})
+						+input({
+							type: 'tel',
+							place: 'Ваш телефон',
+							class: 'action_input'
+						})
+						.action_input.action_textarea
+							textarea(placeholder="О вашем проекте (необязательно)")
+						.action_bottom 
+							.action_btn.btn-fill 
+								button(type="button") Отправить
+							.action_notice!='Отправляя форму, вы соглашаетесь с <a href="#" target="_blank" >политикой конфиденциальности.</a>'
+	section.homeProject 
+		.section_in
+			.homeProject_main 
+				.homeProject_head 
+					.homeProject_title 
+						h5 Наши проекты
+					.homeProject_link 
+						a(href="#")
+							p Показать больше проектов
+							.homeProject_link_icon 
+								+icon('arrow')
+				+project
+	+partners

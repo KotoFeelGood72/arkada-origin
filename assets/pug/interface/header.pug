@@ -1,0 +1,49 @@
+header.header 
+	.section_in 
+		.header_main
+			.header_col_left 
+				.header_logo 
+					a(href="#")
+						img(src="i/global/logo.svg", alt="")
+				nav.header_nav 
+					ul.header_nav_list
+						-
+							var menu = [
+								{
+									link: 'Главная',
+								},
+								{
+									link: 'Услуги',
+									submenu: true,
+								},
+								{
+									link: 'Проекты',
+								},
+								{
+									link: 'О компании',
+								},
+								{
+									link: 'Контакты',
+								}
+							]
+						each item in menu
+							if item.submenu
+								li.header_nav_item
+									a(href="#")=item.link 
+									ul.headernav_submenu 
+										each item in ['Разработка сайтов', 'Контекстная реклама', 'SEO продвижение']
+											li 
+												a(href="#")=item 
+							else 
+								li.header_nav_item 
+									a(href="#")=item.link
+			.header_col_right 
+				.header_info
+					ul 
+						li 
+							a(href="#") +7 995 223-30-41
+						li 
+							a(href="#") arkada.webstudio@yandex.ru
+				.header_btn.btn.btn-border.btn-fill 
+					button(type="button") Заказать звонок
+				

@@ -1,0 +1,28 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Web studio Arkada'}
+block content_block
+	+bread(['Главная'], 'Контакты')
+	section.page-content 
+		.section_in 
+			.page-content_head
+				h1.page-contacts_title Наши контакты
+			.page_content_main
+				ul.page_contacts_list 
+					li 
+						p Номера телефонов:
+						ul
+							-for(i = 0; i < 2; i++)
+								li 
+									a(href="#") +7 995 223-30-41
+					li 
+						p Почта:
+						a(href="#") arkada.webstudio@yandex.ru
+					li 
+						p Соцсети:
+						ul.social_list 
+							each item in ['wa', 'tg', 'vk']
+								li 
+									a(href="#")
+										+icon(item) 

@@ -1,0 +1,45 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Web studio Arkada'}
+block content_block
+	+bread(['Главная'], 'О компании')
+	section.page-content 
+		.section_in 
+			.page-content_head 
+				h1 О компании
+			.page_content_main
+				.page_content_txt.global_txt 
+					strong Мы — команда профессионалов со страстью к дизайну, маркетингу и web & apps разработке.
+					p Мы работаем на рынке интернет-разработок и рекламы более 8 лет. За плечами каждого из нас огромный опыт создания сайтов различной направленности и рекламных кампаний. Arkada — это команда профессионалов, готовых взяться за ваш проект!
+				.page_content_direction 
+					.page_content_direction_txt 
+						h2 Направления нашей работы
+						p Мы не используем субподрядчиков, поэтому уверены в качестве работ над каждым проектом.
+						.btn
+							a(href="#") В портфолио
+					.page_content_direction_list 
+						ul.direction_list
+							-for(i = 1; i < 5; i++)
+								- var title = ['', 'Web Разработка', 'Графический и Web дизайн', 'Контекстная реклама', 'SEO продвижение']
+									li.direction_item_w
+										.direction_item_3d
+										.direction_item_front
+											.direction_next 
+												+icon('arrow') 
+											.direction_item_number=`0${i}`
+											p=title[i]
+										.direction_item_back
+											.direction_back 
+												+icon('arrow') 
+											.direction_item_title
+												h3=title[i]
+											.direction_item_txt.global_txt 
+												p Применение новейших технологий, знание всех последних трендов в разработке и стремление полностью решить все задачи клиента.
+												p Всё это гарантирует вам получение наилучшего результата!
+				+content_block({
+					tutle: 'Наша миссия',
+					img: 'about/about',
+					txt: true,
+				})
+	+partners

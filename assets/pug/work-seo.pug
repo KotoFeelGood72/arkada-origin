@@ -1,0 +1,70 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Деловые консультации'}
+block content_block
+	+singleHead({
+		img: 'development',
+		page: 'Проекты',
+		title: title_inner,
+		btn: true,
+	})
+	section.workSingle 
+		.section_in 
+			.workSingle_main 
+				+serviceWork
+				+target
+				+settings({})
+				.trafficBlock 
+					h2 Трафик в месяц
+					.trafficBlock_time 
+						.trafficBlock_range.before_traffic
+							.trafficBlock_range_head 
+								p До
+								p 21.12.2022
+							.trafficBlock_result 
+								p.before_result 300
+						.trafficBlock_range.after_traffic
+							.trafficBlock_range_head 
+								p До
+								p 21.12.2022
+							.trafficBlock_result 
+								p.after_result 3000
+					.exampleBlock 
+						h4 Примеры ключевых запросов
+						.exampleBlock_main 
+							ul 
+								li 
+									p РСЯ
+									span 10 рекламных кампаний
+								li 
+									p Поисковая реклама
+									span 30 рекламных кампаний
+								li 
+									p Мастер кампаний
+									span 1 рекламная кампания
+								li 
+									p Баннер на поиске
+									span 3 рекламных кампании
+							.exampleResult 
+								p 55
+								span Ключевых запросов всего
+				.workSlider_block 
+					+sectionHead({
+						title: 'Другие проекты',
+						class: 'workSlider'
+					})
+					.workSlider_w 
+						.workSlider_slider.swiper 
+							.swiper-wrapper 
+								.swiper-slide 
+									.project_item 
+										a(href="#")
+											.project_item_img
+												img(src="i/project/project.jpg", alt="")
+											.project_item_content 
+												h3 Дизайн интерьера “WP Interior design”
+												ul.project_tag_list 
+													each item in ['Web-разработка', 'Контекстная реклама']
+														li 
+															a(href="#")=`#${item}`
