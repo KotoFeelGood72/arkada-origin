@@ -6,7 +6,7 @@ block content_block
 	+singleHead({
 		img: 'development',
 		page: 'Проекты',
-		title: title_inner,
+		title: array.title_inner,
 		btn: true,
 	})
 	section.workSingle 
@@ -17,48 +17,49 @@ block content_block
 				+settings({
 					list: true,
 				})
-				.workGraph 
-					.workGraph_head 
+				.workGraph.global-mb 
+					.workGraph_head.section_title 
 						h3 Реклама в РСЯ
-						span Период работы рекламы с 03.09.21 по 16.07.22
+						span.small-title Период работы рекламы с 03.09.21 по 16.07.22
 						p Для рекламы в сетях Яндекса были собраны ключевые слова, разбиты на группы, разработаны баннеры, широкоформатные изображения, прописаны быстрые ссылки, уточнения, UTM-метки, заполнена визитка.
 					.workGraph_body 
-						ul 
+						ul.grid-3 
 							-for(i = 0; i < 6; i++)
 								- var label = ['Расход бюджета всего', 'Показы', 'CTR', 'Клики', 'Заявки', 'Цена заявки']
 								- var value = ['561 938,18 руб', '5 504 351', '0,88%', '48 368', '271', '2 073,57 руб.']
 									li 
 										p=label[i]
 										span=value[i]
-				.workGraph 
-					.workGraph_head 
+				.workGraph.global-mb  
+					.workGraph_head.section_title 
 						h3 Реклама поиск
 						span Период работы рекламы с 03.09.21 по 16.07.22
 						p Для рекламы в сетях Яндекса были собраны ключевые слова, разбиты на группы, разработаны баннеры, широкоформатные изображения, прописаны быстрые ссылки, уточнения, UTM-метки, заполнена визитка.
 					.workGraph_body 
-						ul 
+						ul.grid-3 
 							-for(i = 0; i < 6; i++)
 								- var label = ['Расход бюджета всего', 'Показы', 'CTR', 'Клики', 'Заявки', 'Цена заявки']
 								- var value = ['561 938,18 руб', '5 504 351', '0,88%', '48 368', '271', '2 073,57 руб.']
 									li 
 										p=label[i]
 										span=value[i]
-				.workSlider_block 
+				.workSlider_block.global-mb 
 					+sectionHead({
 						title: 'Другие проекты',
 						class: 'workSlider'
 					})
 					.workSlider_w 
 						.workSlider_slider.swiper 
-							.swiper-wrapper 
-								.swiper-slide 
-									.project_item 
-										a(href="#")
-											.project_item_img
-												img(src="i/project/project.jpg", alt="")
-											.project_item_content 
-												h3 Дизайн интерьера “WP Interior design”
-												ul.project_tag_list 
-													each item in ['Web-разработка', 'Контекстная реклама']
-														li 
-															a(href="#")=`#${item}`
+							.swiper-wrapper
+								-for(i = 0; i < 12; i++) 
+									.swiper-slide 
+										.project_item.hovered-transform 
+											a(href="#")
+												.project_item_img
+													img(src="i/project/project.jpg", alt="")
+												.project_item_content 
+													h3.small-title Дизайн интерьера “WP Interior design”
+													ul.project_tag_list 
+														each item in ['Web-разработка', 'Контекстная реклама']
+															li 
+																a(href="#")=`#${item}`

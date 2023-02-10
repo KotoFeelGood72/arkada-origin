@@ -6,7 +6,7 @@ block content_block
 	+singleHead({
 		img: 'seo',
 		page: 'Услуги',
-		title: title_inner,
+		title: array.title_inner,
 		btn: true,
 	})
 	section.single_body 
@@ -17,29 +17,32 @@ block content_block
 				}) 
 				+content_block({
 					btn: true,
-					img: 'single/context_small'
+					img: 'single/context_small',
 				})
-				.contextPackage
-					h4 Пакеты настройки рекламы 
-					ul.contextPackage_list
+				.contextPackage.global-mb
+					h4.section_title Пакеты настройки рекламы 
+					ul.contextPackage_list.grid-3
 						-for(i = 0; i < 3; i++)
 							li 
 								.contextPackage_item_head 
 									p Ваш бюджет в неделю
 									span 5 000 - 10 000
-								p Вы получаете:
+								p.small-title Вы получаете:
 								ul
-									-for(i = 0; i < 3; i++)
+									-for(idx = 0; idx < 3; idx++)
 										- var oneLabel = ['Семантическое ядро', 'Мастер кампании', 'Ретаргетинг']
 										- var oneVal = ['100 ключей', '1 компания', 'есть']
-										li 
-											p!=oneLabel[i]
-											span!=oneVal[i]
+											li 
+												span!=oneLabel[idx]
+												span!=oneVal[idx]
+
+								.btn.contextPackage_link.hover-btn-border 
+									a(href="#" class="xl") Заказать
 					p К каждому пакету настраивается: метрика, цели рекламы, скрипты для отслеживания пользователя. Также рекомендуем подключать Сквозную Аналитику.
-				.typeWork_block 
-					.typeWork_block_head 
+				.typeWork_block.global-mb 
+					.typeWork_block_head.section_title 
 						h4 Что входит в работу
-					ul.typeWork_block_list
+					ul.typeWork_block_list.grid-2
 						-for(i = 0; i < 4; i++)
 							li
 								h3 Аналитика
@@ -48,22 +51,23 @@ block content_block
 										li=item
 										
 
-				.workSlider_block 
+				.workSlider_block.global-mb 
 					+sectionHead({
-						title: 'Наши партнеры',
+						title: 'Наши проекты',
 						class: 'workSlider'
 					})
 					.workSlider_w 
 						.workSlider_slider.swiper 
-							.swiper-wrapper 
-								.swiper-slide 
-									.project_item 
-										a(href="#")
-											.project_item_img
-												img(src="i/project/project.jpg", alt="")
-											.project_item_content 
-												h3 Дизайн интерьера “WP Interior design”
-												ul.project_tag_list 
-													each item in ['Web-разработка', 'Контекстная реклама']
-														li 
-															a(href="#")=`#${item}`
+							.swiper-wrapper
+								-for(i = 0; i < 12; i++) 
+									.swiper-slide 
+										.project_item 
+											a(href="#")
+												.project_item_img
+													img(src="i/project/project.jpg", alt="")
+												.project_item_content 
+													h3.small-title Дизайн интерьера “WP Interior design”
+													ul.project_tag_list 
+														each item in ['Web-разработка', 'Контекстная реклама']
+															li 
+																a(href="#")=`#${item}`

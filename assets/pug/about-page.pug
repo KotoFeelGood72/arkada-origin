@@ -3,35 +3,32 @@ extends _layout
 block vars
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Web studio Arkada'}
 block content_block
-	+bread(['Главная'], 'О компании')
+	+bread(['Главная'], 'О компании', title=true)
 	section.page-content 
-		.section_in 
-			.page-content_head 
-				h1 О компании
+		.section_in
 			.page_content_main
 				.page_content_txt.global_txt 
 					strong Мы — команда профессионалов со страстью к дизайну, маркетингу и web & apps разработке.
 					p Мы работаем на рынке интернет-разработок и рекламы более 8 лет. За плечами каждого из нас огромный опыт создания сайтов различной направленности и рекламных кампаний. Arkada — это команда профессионалов, готовых взяться за ваш проект!
+				.page_content_img.big_img 
+					img(src="i/about/about_big.jpg", alt="")
 				.page_content_direction 
 					.page_content_direction_txt 
 						h2 Направления нашей работы
 						p Мы не используем субподрядчиков, поэтому уверены в качестве работ над каждым проектом.
-						.btn
-							a(href="#") В портфолио
+						.btn.btn-fill.hover-btn-fill
+							a(class="xxl" href="#") В портфолио
 					.page_content_direction_list 
-						ul.direction_list
+						ul.direction_list.grid-2
 							-for(i = 1; i < 5; i++)
 								- var title = ['', 'Web Разработка', 'Графический и Web дизайн', 'Контекстная реклама', 'SEO продвижение']
 									li.direction_item_w
-										.direction_item_3d
+										.direction_toggle
+											+icon('arrow') 
 										.direction_item_front
-											.direction_next 
-												+icon('arrow') 
 											.direction_item_number=`0${i}`
 											p=title[i]
 										.direction_item_back
-											.direction_back 
-												+icon('arrow') 
 											.direction_item_title
 												h3=title[i]
 											.direction_item_txt.global_txt 

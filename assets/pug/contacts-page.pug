@@ -3,19 +3,17 @@ extends _layout
 block vars
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Web studio Arkada'}
 block content_block
-	+bread(['Главная'], 'Контакты')
+	+bread(['Главная'], 'Контакты', title=true)
 	section.page-content 
 		.section_in 
-			.page-content_head
-				h1.page-contacts_title Наши контакты
 			.page_content_main
 				ul.page_contacts_list 
 					li 
 						p Номера телефонов:
 						ul
-							-for(i = 0; i < 2; i++)
+							each item in ['+7 995 <span>223-30-41</span>', '+7 995 <span>223-30-41</span>']
 								li 
-									a(href="#") +7 995 223-30-41
+									a(href="#")!=item
 					li 
 						p Почта:
 						a(href="#") arkada.webstudio@yandex.ru
@@ -25,4 +23,4 @@ block content_block
 							each item in ['wa', 'tg', 'vk']
 								li 
 									a(href="#")
-										+icon(item) 
+										img(src=`i/social/${item}.svg`, alt="")

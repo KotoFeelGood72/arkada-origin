@@ -12,9 +12,17 @@
 @import "templates/header";
 @import "templates/footer";
 @import "templates/popup";
-@import "templates/succes";
-@import "templates/failed";
-@import "templates/btn";
+@import "templates/mode";
+@import "templates/btn-style";
+@import "templates/input";
+@import "templates/breadcrumb";
+
+
+
+// Components
+
+@import "components/service/card";
+@import "components/work/card";
 
 
 // icons
@@ -24,6 +32,16 @@
 // Page
 
 @import "page/home";
+@import "page/services-page";
+@import "page/about-page";
+@import "page/context-page";
+@import "page/contacts-page";
+@import "page/development-page";
+@import "page/portfolio-page";
+@import "page/seo-page";
+@import "page/work-context";
+@import "page/work-development";
+@import "page/work-seo";
 @import "page/policy";
 
 // plugins

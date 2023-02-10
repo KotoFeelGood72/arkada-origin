@@ -3,15 +3,14 @@ extends _layout
 block vars
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Web studio Arkada'}
 block content_block
-	+bread(['Главная'], 'Проекты')
+	+bread(['Главная'], 'Наши роекты', title=true)
 	section.page-content 
 		.section_in 
-			.page-content_head 
-				h1 Наши проекты
-			.page_content_main
+			.page_content_main.mb8
 				.page_content_tab 
 					ul 
 						each item in ['Разработка', 'Реклама', 'SEO']
-							li 
-								a(href="#")=item 
-				+service
+							li
+								.btn.hover-btn-border
+									a(href="#" class="xl")=item 
+				+project

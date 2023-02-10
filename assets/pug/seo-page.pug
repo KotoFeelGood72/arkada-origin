@@ -6,7 +6,7 @@ block content_block
 	+singleHead({
 		img: 'seo',
 		page: 'Услуги',
-		title: title_inner,
+		title: array.title_inner,
 		btn: true,
 	})
 	section.single_body 
@@ -19,10 +19,10 @@ block content_block
 					btn: true,
 					img: 'single/seo_small'
 				})
-				.typeWork_block 
-					.typeWork_block_head 
+				.typeWork_block.global-mb 
+					.typeWork_block_head.section_title 
 						h4 Какую работу мы проводим
-					ul.typeWork_block_list
+					ul.typeWork_block_list.grid-2
 						-for(i = 0; i < 4; i++)
 							li
 								h3 Аналитика
@@ -30,22 +30,23 @@ block content_block
 									each item in ['Технический анализ сайта;', 'Анализ юзабилити, подготовка рекомендаций по улучшению конверсионности;', 'Анализ сайтов конкурентов, подготовка рекомендаций по функционалу;', 'Анализ динамики позиций и трафика для отслеживания результатов продвижения;', 'Анализ ссылочных профилей конкурентов и подготовка рекомендаций.']
 										li=item
 
-				.workSlider_block 
+				.workSlider_block.global-mb 
 					+sectionHead({
 						title: 'Наши партнеры',
 						class: 'workSlider'
 					})
 					.workSlider_w 
 						.workSlider_slider.swiper 
-							.swiper-wrapper 
-								.swiper-slide 
-									.project_item 
-										a(href="#")
-											.project_item_img
-												img(src="i/project/project.jpg", alt="")
-											.project_item_content 
-												h3 Дизайн интерьера “WP Interior design”
-												ul.project_tag_list 
-													each item in ['Web-разработка', 'Контекстная реклама']
-														li 
-															a(href="#")=`#${item}`
+							.swiper-wrapper
+								-for(i = 0; i < 12; i++) 
+									.swiper-slide 
+										.project_item 
+											a(href="#")
+												.project_item_img
+													img(src="i/project/project.jpg", alt="")
+												.project_item_content 
+													h3.small-title Дизайн интерьера “WP Interior design”
+													ul.project_tag_list 
+														each item in ['Web-разработка', 'Контекстная реклама']
+															li 
+																a(href="#")=`#${item}`

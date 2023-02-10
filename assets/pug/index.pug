@@ -11,8 +11,8 @@ block content_block
 						h1 Web studio Arkada
 					.hero_txt 
 						p Мы разрабатываем web-сайты и интернет-порталы, оказываем услуги по seo-продвижению и контекстной рекламе.
-					.hero_btn.btn-border 
-						button(type="button") Оставить заявку
+					.hero_btn.btn-border.btn.hover-btn-border 
+						button(type="button" class="xxl") Оставить заявку
 				.hero_tag 
 					ul.hero_tag_list
 						each item in ['SEO', 'РЕКЛАМА', 'ДИЗАЙН', 'РАЗРАБОТКА']
@@ -20,24 +20,24 @@ block content_block
 								a(href="#")=item
 	section.responcible 
 		.section_in 
-			.responcible_main 
+			.responcible_main.global-mb 
 				.responcible_title 
 					h2 Компания с ответственным подходом к работе
 				.responcible_content 
-					h3 Знаем, что такое бизнес, и полностью погружаемся в задачу клиента.
+					h3.small-title Знаем, что такое бизнес, и полностью погружаемся в задачу клиента.
 					.responcible_txt.global_txt 
 						p Специализируясь на разработке сайтов под ключ и продвижении, мы проводим комплексную работу, которая дает гарантированный результат.
 						p Слаженные действия специалистов позволяют максимально настроить всю работу на реализацию поставленных целей и задач.
-					.responcible_btn.btn-fill
-						a(href="#") В портфолио
+					.responcible_btn.btn-fill.btn.hover-btn-fill
+						a(href="#" class="xxl") В портфолио
 	section.service.homeservice 
 		.section_in 
-			.service_main 
-				.service_title 
+			.service_main.global-mb 
+				.service_title.section_title 
 					h3 Наши услуги
 				+service
 	+tech
-	section.action 
+	section.action.global-mb 
 		.section_in 
 			.action_main 
 				.action_content 
@@ -58,16 +58,16 @@ block content_block
 							place: 'Ваш телефон',
 							class: 'action_input'
 						})
-						.action_input.action_textarea
-							textarea(placeholder="О вашем проекте (необязательно)")
+						.action_input.action_textarea.global_input
+							textarea(placeholder="О вашем проекте (необязательно)" rows="6")
 						.action_bottom 
-							.action_btn.btn-fill 
-								button(type="button") Отправить
+							.action_btn.btn-fill.btn.submit_btn.hover-btn-fill 
+								input(class="xl" type="submit", value="Отправить")
 							.action_notice!='Отправляя форму, вы соглашаетесь с <a href="#" target="_blank" >политикой конфиденциальности.</a>'
 	section.homeProject 
 		.section_in
-			.homeProject_main 
-				.homeProject_head 
+			.homeProject_main.global-mb 
+				.homeProject_head.section_title 
 					.homeProject_title 
 						h5 Наши проекты
 					.homeProject_link 

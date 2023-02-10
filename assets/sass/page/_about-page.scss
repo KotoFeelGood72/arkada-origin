@@ -1,0 +1,164 @@
+.page_content_txt  {
+	margin-bottom: $m6;
+	max-width: 103.3rem;
+}
+.page_content_img {
+	border-radius: 2rem;
+	overflow: hidden;
+	margin-bottom: $m8;
+	@include bp($point_2) {
+		margin-bottom: 0;
+	}
+}
+
+.page_content_direction {
+	padding: $m8 0;
+	@include flex-start;
+	align-items: flex-start;
+	@include bp($point_2) {
+		padding: $m6 0;
+		flex-direction: column;
+	}
+}
+
+.page_content_direction_list {
+	width: 100%;
+}
+
+.page_content_direction_txt {
+	max-width: 47rem;
+	margin-right: 15rem;
+	@include bp($point_2) {
+		margin: 0 0 $m6 0;
+	}
+	p {
+		padding: $m3 0 $m6 0;
+		@include bp($point_2) {
+			padding: 2rem 0 3rem 0;
+		}
+	}
+}
+
+.direction_list  {
+	width: 100%;
+	perspective: 800px;
+}
+.direction_item_w {
+	position: relative;
+	height: 24.3rem;
+	border-radius: 2rem;
+	pointer-events: none;
+	transition: transform 1s ease;
+	transform-style: preserve-3d;
+	user-select: none;
+	@include bp($point_4) {
+		height: 20rem;
+	}
+	&.active {
+		transform: rotateY(180deg);
+		.direction_toggle {
+			right: auto;
+			left: 3rem;
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.direction_item_front {
+	padding: $m6;
+	background-color: rgba(255, 255, 255, 0.06);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+	transition: all 1s ease;
+	border-radius: 2rem;
+	@include bp($point_4) {
+		padding: 2rem;
+		@include flex-center;
+		align-items: flex-start;
+		flex-direction: column;
+	}
+	p {
+		font-size: 2rem;
+		font-family: $font_2;
+	}
+}
+
+.direction_item_back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $dark-vio;
+	padding: 3.6rem $m6;
+	-webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+	transform: rotateY(180deg);
+	transition: all 1s ease;
+	border-radius: 2rem;
+	@include bp($point_4) {
+		padding: 2rem;
+	}
+	h3 {
+		font-size: 2rem;
+		font-family: $font_2;
+		line-height: 2.3rem;
+		@include bp($point_4) {
+			font-size: 1.8rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	p {
+		font-size: 1.6rem;
+		font-family: $font_2;
+		@include bp($point_4) {
+			font-size: 1.4rem;
+		}
+	}
+}
+
+.direction_item_number {
+	font-size: 6rem;
+	font-family: $font_2;
+	line-height: 7rem;
+	margin-bottom: 3rem;
+}
+
+.direction_toggle {
+	position: absolute;
+	top: 3rem;
+	right: 3rem;
+	cursor: pointer;
+	pointer-events: all;
+	z-index: 11;
+	transition: all .3s ease;
+	svg {
+		pointer-events: none;
+	}
+}
+
+
+.content_block {
+	@include flex-start;
+	align-items: flex-start;
+	@include bp($point_2) {
+		flex-direction: column;
+	}
+}
+
+.content_block_txt {
+	max-width: 87.4rem;
+}
+
+.content_block_img {
+	margin-right: $m6;
+	@include bp($point_2) {
+		margin: 0 0 $m4 0;
+	}
+}

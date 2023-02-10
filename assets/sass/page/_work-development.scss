@@ -1,0 +1,97 @@
+.singleTemplate_head_content {
+	ul {
+		@include flex-start;
+		flex-wrap: wrap;
+		margin: -2rem -2rem 0 0;
+		li {
+			padding: 2rem 2rem 0 0;
+			opacity: .7;
+			&:before {
+				content: '#';
+			}
+		}
+	}
+}
+
+.designBlock_head  {
+	margin-bottom: $m10;
+	max-width: 77.5rem;
+	@include bp($point_2) {
+		margin-bottom: $m6;
+	}
+}
+
+.designBlock_gallery {
+	@include flex-start;
+	align-items: flex-start;
+
+	div {
+		border-radius: 2rem;
+		overflow: hidden;
+		height: 142.6rem;
+		@include bp($point_2)  {
+			height: auto;
+		}
+		img {
+			height: 100%;
+			object-fit: cover;
+			@include bp($point_2) {
+				height: auto;
+			}
+		}
+		&:nth-child(2) {
+			position: relative;
+			height: 160rem;
+			@include z-index(el);
+			margin: 8.8rem 0 0 -6.6rem;
+			@include bp($point_2) {
+				height: auto;
+				margin: 3rem 0 0 -2rem;
+			}
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $dark;
+				opacity: .2;
+				content: '';
+			}
+		}
+ 	}
+}
+
+
+
+.adaptiveBlock_head {
+	max-width: 77.5rem;
+	margin-bottom: $m10;
+	@include bp($point_2) {
+		margin-bottom: $m6;
+	}
+	h4 {
+		margin-bottom: 3rem;
+	}
+}
+
+.adaptiveImg_gallery {
+	ul {
+		@include flex-space;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		margin: -10rem -10rem 0 0;
+		@include bp($point_2) {
+			margin: 0;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+			grid-gap: 5rem
+		}
+		li {
+			padding: 10rem 10rem 0 0;
+			@include bp($point_2) {
+				padding: 0;
+			}
+		}
+	}
+}

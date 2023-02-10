@@ -1,0 +1,227 @@
+.workSingle {
+}
+.section_in {
+}
+.workSingle_main {
+}
+.serviceWork {
+	@include flex-space;
+	align-items: flex-start;
+	// padding: $m8 0;
+	@include bp($point_2) {
+		flex-direction: column;
+	}
+}
+.serviceWork_txt {
+	max-width: 77.5rem;
+	margin: 5.7rem 15rem 0 0;
+	@include  bp($point_2){
+		margin: 0 0 $m4 0;
+	}
+}
+.global_txt {
+}
+.serviceWork_card {
+	background: rgba(255, 255, 255, 0.06);
+	border-radius: 2rem;
+	padding: $m6;
+	min-width: 54.7rem;
+	@include bp($point_2) {
+		padding: $m4;
+		width: 100%
+	}
+	@include bp($point_4) {
+		min-width: 100%
+	}
+
+	ul {
+		li {
+			@include flex-start;
+			flex-direction: column;
+			align-items: flex-start;
+			font-size: 2rem;
+			@include bp($point_4) {
+				font-size: 1.6rem;
+			}
+			&:not(:last-child) {
+				margin-bottom: 4rem;
+				@include bp($point_2){
+					margin-bottom: 2.5rem;
+				}
+			}
+			&:before {
+				opacity: .5;
+				margin-bottom: 1rem;
+				font-size: 1.8rem;
+				@include bp($point_4) {
+					font-size: 1.4rem;
+				}
+			}
+			&:nth-child(1) {
+				&:before {
+					content: 'Регион:';
+				}
+			}
+			&:nth-child(2) {
+				&:before {
+					content: 'Дата создания:';
+				}
+			}
+			&:nth-child(3) {
+				&:before {
+					content: 'Ссылка:';
+				}
+			}
+		}
+	}
+}
+
+
+
+.settingBlock {
+	@include flex-space;
+	align-items: flex-start;
+	@include bp($point_2) {
+		flex-direction: column;
+	}
+}
+.settingBlock_txt {
+	max-width: 61.6rem;
+	margin-right: 15rem;
+	@include bp($point_2){
+		margin: 0 0 $m4 0;
+	}
+
+	span {
+		display: block;
+		font-family: $font_3;
+		margin-bottom: 2rem;
+	}
+}
+.settingBlock_service {
+	flex: 1;
+	flex-grow: 1;
+}
+
+.dotted_list {
+	margin-bottom: $m6;
+	@include bp($point_2){
+		margin: 0 0 $m4 0;
+	}
+	li {
+		@include flex-space;
+		// opacity: .7;
+		align-items: flex-end;
+		@include bp($point_4) {
+			flex-wrap: wrap;
+		}
+		&:after {
+			content: "";
+			border-bottom: 0.1rem dotted #fff;
+			opacity: 0.5;
+			flex-grow: 1;
+			order: 2;
+			margin: -0.8rem 0.5rem 0.7rem 0.5rem;
+		}
+
+		span {
+			// position: relative;
+			order: 0;
+			&:nth-child(2) {
+				order: 3;
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+.default_list {
+	li {
+		font-family: $font_3;
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+			@include bp($point_4) {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+}
+
+.workGraph_head {
+	max-width: 77.5rem;
+	span {
+		margin: 3rem 0;
+		display: block;
+	}
+}
+.workGraph_body {
+
+	li {
+		background: rgba(255, 255, 255, 0.06);
+		border-radius: 2rem;
+		padding: 4rem;
+		@include bp($point_4) {
+			padding: 3rem 2rem;
+		}
+
+		p {
+			margin-bottom: 3rem;
+			opacity: .7;
+			@include bp($point_4) {
+				margin-bottom: 2rem;
+			}
+		} span {
+			font-size: 3rem;
+			@include bp($point_4) {
+				font-size: 2.6rem;
+			}
+		}
+	}
+}
+.workSlider_block {
+}
+.section_head {
+}
+.section_title {
+}
+.workSlider_head {
+}
+.section_head_title {
+}
+.slider_nav {
+}
+.workSlider_nav {
+}
+.slider_btn_nav {
+}
+.workSlider_btn_prev {
+}
+.icon {
+}
+.icon-prev {
+}
+.workSlider_btn_next {
+}
+.icon-next {
+}
+.workSlider_w {
+}
+.workSlider_slider {
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.project_item {
+}
+.project_item_img {
+}
+.project_item_content {
+}
+.small-title {
+}
+.project_tag_list {
+}

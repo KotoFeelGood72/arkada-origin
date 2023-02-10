@@ -3,11 +3,11 @@
 mixin tech 
 	section.tech 
 		.section_in
-			.tech_main 
+			.tech_main.global-mb 
 				.tech_title 
 					h3 Технологии, которые используем
 				ul.tech_list 
-					-for(i = 0; i < 7; i++)
+					-for(i = 0; i < 8; i++)
 						- var img = 'i/tech/tech_' + i + '.png'
 							li.tech_item 
 								img(src=img, alt="")
@@ -17,13 +17,13 @@ mixin tech
 
 // Service
 mixin service 
-	ul.service_grid 
+	ul.service_grid.grid-3 
 		-for(i = 0; i < 6; i++)
-			li.service_item 
+			li.service_item.hovered-el 
 				a(href="#")
 					.service_item_head
 						.service_item_title 
-							h3 Разработка сайтов
+							h3.small-title Разработка сайтов
 						.service_item_txt 
 							p Сайт, разработанный в нашей студии, поможет вашим клиентам получить информацию о вашей компании и её услугах.
 					.service_item_link 
@@ -49,32 +49,33 @@ mixin input(data)
 // Project list
 
 mixin project 
-	ul.project_grid 
+	ul.project_grid.grid-3 
 		-for(i = 0; i < 6; i++)
-			li.project_item 
-				a(href="#")
-					.project_item_img
+			li.project_item.hovered-transform 
+				.project_item_img
+					a(href="#") 
 						img(src="i/project/project.jpg", alt="")
-					.project_item_content 
-						h3 Дизайн интерьера “WP Interior design”
-						ul.project_tag_list 
-							each item in ['Web-разработка', 'Контекстная реклама']
-								li 
-									a(href="#")=`#${item}` 
+				.project_item_content
+					a(href="#") 
+						h3.small-title Дизайн интерьера “WP Interior design”
+					ul.project_tag_list 
+						each item in ['Web-разработка', 'Контекстная реклама']
+							li 
+								a(href="#")=`#${item}` 
 
 
 // End
 
 // Head section
 mixin sectionHead(data)
-	.section_head(class=`${data.class}_head`)
+	.section_head.section_title(class=`${data.class}_head`)
 		.section_head_title
 			h4=data.title
 		.slider_nav(class=`${data.class}_nav`)
-			.slider_btn_nav(class=`${data.class}_btn_prev`)
+			.slider_btn_nav.btn(class=`${data.class}_btn_prev`)
 				button(type="button")
 					+icon('prev')
-			.slider_btn_nav(class=`${data.class}_btn_next`)
+			.slider_btn_nav.btn(class=`${data.class}_btn_next`)
 				button(type="button")
 					+icon('next')
 
@@ -84,7 +85,7 @@ mixin sectionHead(data)
 mixin partners
 	section.partners 
 		.section_in 
-			.partners_main 
+			.partners_main.global-mb 
 				+sectionHead({
 					title: 'Наши партнеры',
 					class: 'partners'
@@ -94,18 +95,18 @@ mixin partners
 						.swiper-wrapper
 							-for(i = 0; i < 12; i++) 
 								.swiper-slide 
-									.partners_slide 
-										img(src="i/partners/partners.png", alt="")
+									.partners_slide
+										img(src="i/tech/tech_1.png", alt="")
 
 // End
 
 // Content block //
 
 mixin content_block(data)
-	.content_block 
+	.content_block.global-mb 
 		.content_block_img 
 			img(src=`i/${data.img}.jpg`, alt="")
-		.content_block_txt 
+		.content_block_txt.global_txt 
 			h2 Наша миссия
 			.content_block_description.global_txt.custom_list
 				if data.txt === true 
@@ -120,8 +121,8 @@ mixin content_block(data)
 						li Вы хотите обеспечить постоянный рост и развитие сайта;
 						li Вы хотите создать стабильный поток целевой аудитории.
 			if data.btn === true 
-				.content_block_link.btn 
-					a(href="#") Заказать
+				.content_block_link.btn.btn-fill.hover-btn-fill 
+					a(href="#" class="xxl") Заказать
 
 // END //
 
@@ -130,19 +131,22 @@ mixin content_block(data)
 // Single template head
 
 mixin singleHead(data)
-	section.singleTemplate_head(background=`i/single/${data.img}.jpg`) 
+	section.singleTemplate_head
+		.singleTemplate_hero--img 
+			img(src=`i/single/${data.img}.jpg`)
 		.section_in 
 			.singleTemplate_head_main 
-				+bread(['Главная', `${data.page}`], data.title)
-				h1=data.title
-				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				if data.btn === true
-					.trigger_popup.btn 
-						button(type="button") Оставить заявку
-				if data.tag
-					ul
-						each item in data.tag 
-							li=item
+				+bread(['Главная', `${data.page}`], data.title, data.vis=true)
+				.singleTemplate_head_content
+					h1=data.title
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					if data.btn === true
+						.trigger_popup.btn.hover-btn-border.hover-btn-border
+							button(type="button" class="xxl") Оставить заявку
+					if data.tag
+						ul
+							each item in data.tag 
+								li=item
 
 
 // END
@@ -150,7 +154,7 @@ mixin singleHead(data)
 // Text block standart
 
 mixin txt_block(data)
-	.defaultBlock 
+	.defaultBlock.global-mb 
 		.defaulBlock_title 
 			h2=data.title 
 		.defaultBlock_txt.global_txt
@@ -161,7 +165,7 @@ mixin txt_block(data)
 
 // Service work
 mixin serviceWork
-	.serviceWork 
+	.serviceWork.global-mb 
 		.serviceWork_txt.global_txt 
 			h2 О компании
 			p Специализируясь на разработке сайтов под ключ и продвижении, мы проводим комплексную работу, которая дает гарантированный результат.
@@ -178,9 +182,9 @@ mixin serviceWork
 // Target block
 
 mixin target
-	.targetBlock.custom_list 
-		h3 Цели и задачи
-		ul.target_list
+	.targetBlock.custom_list.global-mb 
+		h3.section_title Цели и задачи
+		ul.target_list.custom_list.grid-2
 			-for(i = 0; i < 4; i++)
 				li Увеличение количества посетителей из поисковых систем;
 
@@ -190,10 +194,10 @@ mixin target
 // Settings
 
 mixin settings(data) 
-	.settingBlock 
+	.settingBlock.global-mb 
 		.settingBlock_txt.global_txt
 			h3 Решения
-			span Было настроено 44 рекламных кампании
+			span.small-title Было настроено 44 рекламных кампании
 			p На разные направления клиники, например: лазерная коррекция зрения, катаракта, детское отделение, и т.д
 		.settingBlock_service
 			if data.list === true
@@ -216,11 +220,11 @@ mixin settings(data)
 			else 
 				.settingBlock_txt_list 
 					li 
-						span Технические доработки
+						h2 Технические доработки
 						p Есть тематики, по которым при всем желании не удастся протащить молодой сайт в топ-10 по высокочастотным запросам — со спецтехникой такая же история.Но в рамках SEO мы не только создаем поддомены, шаманим с метатегами и создаем индексируемые страницы категорий.
 						p Мы много работаем с сайтом: правим код, изучаем поведенческие, тестируем гипотезы, улучшаем юзабилити, уменьшаем отказы. Это помогает окупить оптимизацию, даже если позиции не сильно растут — ведь зато растут конверсии, а из-за этого тот же контекст становится крутить выгодней.
 					li 
-						span Подзаголовок 2
+						h3 Подзаголовок 2
 						p Есть тематики, по которым при всем желании не удастся протащить молодой сайт в топ-10 по высокочастотным запросам — со спецтехникой такая же история.Но в рамках SEO мы не только создаем поддомены, шаманим с метатегами и создаем индексируемые страницы категорий.
 
 

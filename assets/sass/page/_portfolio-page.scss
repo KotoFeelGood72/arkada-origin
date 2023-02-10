@@ -1,0 +1,17 @@
+.page_content_tab {
+	margin-bottom: $m6;
+	ul {
+		@include flex-start;
+		flex-wrap: wrap;
+		margin: -2rem -2rem 0 0;
+		@include bp($point_4) {
+			margin: -1rem -1rem 0 0;
+		}
+		li {
+			padding: 2rem 2rem 0 0;
+			@include bp($point_4) {
+				padding: 1rem 1rem 0 0;
+			}
+		}
+	}
+}

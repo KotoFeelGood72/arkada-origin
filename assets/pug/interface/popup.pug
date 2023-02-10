@@ -1,0 +1,22 @@
+.popup.popup_form(data-id="form")
+	.popup_bg 
+	.popup_main.popup_form_main
+		.popup_main_head 
+			h3 Оставьте заявку
+			p Мы свяжемся с вами, чтобы обсудить проект!
+		.popup_forms 
+			form.action_form
+				+input({
+					class: 'action_input'
+				})
+				+input({
+					type: 'tel',
+					place: 'Ваш телефон',
+					class: 'action_input'
+				})
+				.action_input.action_textarea.global_input
+					textarea(placeholder="О вашем проекте (необязательно)" rows="6")
+				.action_bottom 
+					.action_btn.btn-fill.btn.submit_btn.hover-btn-fill 
+						input(class="xl" type="submit", value="Отправить")
+					.action_notice!='Отправляя форму, вы соглашаетесь с <a href="#" target="_blank" >политикой конфиденциальности.</a>'

@@ -1,0 +1,52 @@
+.breadcrumb {
+	margin-bottom: $m6;
+	@include bp($point_4) {
+		margin-bottom: 4rem;
+	}
+}
+.breadcrumb__list {
+	@include flex-start;
+	flex-wrap: wrap;
+	margin-bottom: $m6;
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+	}
+}
+.breadcrumb__item {
+	span, a {
+		line-height: 2.1rem;
+		display: block;
+		@include bp($point_4) {
+			font-size: 1.4rem;
+		}
+	}
+	a {
+		opacity: .5;
+	}
+	&:not(:last-child) {
+		margin-right: 4.1rem;
+		position: relative;
+		@include bp($point_4) {
+			margin-right: 2.5rem;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: .5rem;
+			height: .5rem;
+			background-color: $white;
+			opacity: .5;
+			border-radius: 100%;
+			right: -2rem;
+			@include bp($point_4) {
+				right: -1.5rem;
+			}
+		}
+	}
+}
+.breadcrumb__link {
+}
+.breadcrumb__link-current {
+}

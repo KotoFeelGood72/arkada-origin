@@ -16,12 +16,12 @@ footer.footer
 									place: 'Ваш телефон',
 									type: 'tel'
 								})
-								.footer_mod_textarea.action_input.action_textarea
-									textarea(placeholder="О вашем проекте (необязательно)")
-								.footer_mod_bottom.action_bottom 
-									.footer_mod_btn.action_btn.btn-fill 
-										button(type="button") Отправить
-									.footer_mod_notice.action_notice!='Отправляя форму, вы соглашаетесь с <a href="#" target="_blank" >политикой конфиденциальности.</a>'
+							.footer_mod_textarea.action_input.action_textarea.global_input
+								textarea(placeholder="О вашем проекте (необязательно)" rows="3")
+							.footer_mod_bottom.action_bottom 
+								.footer_mod_btn.btn-fill.submit_btn.btn.hover-btn-fill 
+									input(class="xxl" type="submit", value="Отправить")
+								.footer_mod_notice.action_notice!='Отправляя форму, вы соглашаетесь с <a href="#" target="_blank" >политикой конфиденциальности.</a>'
 				.footer_info 
 					.footer_info_phone 
 						p Номера телефонов:
@@ -33,8 +33,8 @@ footer.footer
 						p Почта:
 						.footer_mail_link 
 							a(href="#") arkada.webstudio@yandex.ru
-					.footer_brief_link 
-						a(href="#") Заполнить бриф
+					.footer_brief_link.btn.btn-fill.hover-btn-fill 
+						a(href="#" class="xl") Заполнить бриф
 			.footer_bottom 
 				.footer_col_left 
 					.footer_copyright © Все права защищены, 2022

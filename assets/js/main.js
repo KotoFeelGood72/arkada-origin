@@ -14,7 +14,21 @@ let $body,
 
 $(document).ready(function ($) {
 	$body = $('body');
-	
+	if(devStatus) {
+		pageWidget(['index']);
+		pageWidget(['about-page']);
+		pageWidget(['contacts-page']);
+		pageWidget(['context-page']);
+		pageWidget(['development-page']);
+		pageWidget(['policy']);
+		pageWidget(['portfolio-page']);
+		pageWidget(['seo-page']);
+		pageWidget(['service-page']);
+		pageWidget(['work-context']);
+		pageWidget(['work-development']);
+		pageWidget(['work-seo']);
+		getAllClasses('html', '.elements_list');
+	}
 });
 
 $(window).on('load', function () {
@@ -163,60 +177,8 @@ $(document).ready(function() {
 // 	});
 // }
 
-// function popupForms(pr) {
-
-// 	let popupForms = document.querySelector('.callback')
-// 	let popupFormsTrigger = document.querySelectorAll('.btn_popup')
-// 	let popupFormsClose = document.querySelectorAll('.remove_popup')
-// 	let popupFormsSubmit = popupForms.querySelector('button[type="submit"]')
-// 	const burgerPopup = document.querySelector('.burger')
-	
-// 	Array.from(popupFormsTrigger).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.add('active');
-// 			win.style.overflow = "hidden";
-// 			win.style.paddingRight = pr; 
-// 			burgerPopup.classList.remove('active')
-// 		})
-// 	})
 
 
-// 	Array.from(popupFormsClose).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.remove('active')
-// 			win.style.overflow = "";
-// 			win.style.paddingRight = ""; 
-// 		})
-// 	})
-
-// 	popupFormsSubmit.addEventListener('click', () => {
-// 		popupForms.classList.remove('active')
-// 		win.style.overflow = "";
-// 		win.style.paddingRight = ""; 
-// 		succes('.succes')
-// 	})
-// }
-
-function burgerMobile() {
-	const triggerBurger = document.querySelector('.header_burger')
-	const burgerPopup = document.querySelector('.burger')
-	const burgerFail = document.querySelectorAll('.remove')
-	
-	triggerBurger.addEventListener('click', () => {
-		burgerPopup.classList.add('active')
-		triggerBurger.classList.add('active')
-		win.style.overflow = "hidden";
-	})
-
-	Array.from(burgerFail).map((item) => {
-		item.addEventListener('click', () => {
-			burgerPopup.classList.remove('active')
-			triggerBurger.classList.remove('active')
-			win.style.overflow = "";
-		})
-	})
-
-}
 
 
 
@@ -266,7 +228,100 @@ async function maps(street, city, size) {
 
 }
 
+const partnerSlider = new Swiper('.partners_slider', {
+	navigation: {
+		nextEl: '.partners_btn_next',
+		prevEl: '.partners_btn_prev',
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 30,
+		},
+		480: {
+			slidesPerView: 2,
+			spaceBetween: 30,
+		},
+		768: {
+			slidesPerView: 3,
+			spaceBetween: 30,
+		},
+		1024: {
+			slidesPerView: 5,
+			spaceBetween: 90,
+		}
+	}
+})
 
+
+
+const projectSLider = new Swiper('.workSlider_slider', {
+	navigation: {
+		nextEl: '.workSlider_btn_next',
+		prevEl: '.workSlider_btn_prev',
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 30,
+		},
+		480: {
+			slidesPerView: 1,
+			spaceBetween: 30,
+		},
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 30,
+		},
+		1024: {
+			slidesPerView: 3,
+			spaceBetween: 30,
+		}
+	}
+})
+
+
+function rangeState() {
+	const fillRAnge = document.querySelectorAll('.traffic_range')
+		Array.from(fillRAnge).map((el, i) => {
+			el.style.width = el.dataset.percent / 5
+		})
+
+}
+
+rangeState();
+
+
+
+function rotateCard() {
+	const cards = document.querySelectorAll('.direction_item_w')
+
+	Array.from(cards).map((card, e) => {
+		card.addEventListener('click', (e) => {
+			if(e.target.classList.contains('direction_toggle')) {
+				card.classList.toggle('active')
+			}
+		})
+	})
+}
+
+rotateCard();
+
+function checkSubmenu() {
+	const menuList = document.querySelector('.header_nav_list');
+	let menuItem = menuList.querySelectorAll('li')
+
+	Array.from(menuItem).map((el) => {
+		let checkItems = el.children
+		Array.from(checkItems).map((items) =>{
+			if(items.classList.contains('headernav_submenu')) {
+				el.classList.add('parent_element_item')
+			}
+		})
+	})
+}
+
+checkSubmenu();
 
 
 

@@ -1,0 +1,73 @@
+.xxl {
+	padding: 2.4rem 6.5rem;	
+	@include bp($point_4) {
+		padding: 1.5rem 3rem;
+	}
+}
+
+.xl{ 
+	padding: 2rem 4.5rem;
+	@include bp($point_4) {
+		padding: 1.5rem 3rem;
+	}
+}
+
+.btn {
+	position: relative;
+	overflow: hidden;
+	border-radius: 1rem;
+	display: inline-flex;
+
+	button, a, input[type="submit"] {
+		color: $white;
+		border: .1rem solid  rgba(255, 255, 255, 0.2);
+		border-radius: 1rem;
+		display: inline-flex;
+
+		&.xxl {
+			font-family: $font_2;
+			font-size: 2rem;
+			line-height: 2.3rem;
+			@include bp($point_4) {
+				font-size: 1.6rem;
+				line-height: 2rem;
+			}
+		}
+	}
+
+	&.btn-fill {
+		button, a, input[type="submit"] {
+			background-color: $dark-vio;
+			border-color: $dark-vio;
+		}
+	}
+	&.submit_btn {
+		width: 100%;
+		input {
+			@include app;
+			font-size: 1.8rem;
+			font-family: $font_2;
+			line-height: 2.1rem;
+			cursor: pointer;
+			width: 100%;
+			justify-content: center;
+		}
+	}
+}
+
+
+.wave {
+  background: rgba(255, 255, 255, .4);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: wave .5s linear;
+  pointer-events: none;
+  position: absolute;
+}
+
+@keyframes wave {
+  100% {
+   transform: scale(2);
+   opacity: 0;
+  }
+}

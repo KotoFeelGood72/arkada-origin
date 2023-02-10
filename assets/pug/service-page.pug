@@ -3,10 +3,8 @@ extends _layout
 block vars
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Web studio Arkada'}
 block content_block
-	+bread(['Главная'], 'Услуги')
+	+bread(['Главная'], 'Наши услуги', title=true)
 	section.page-content 
-		.section_in 
-			.page-content_head 
-				h1 Наши услуги
-			.page_content_main 
-				+project
+		.section_in
+			.page_content_main.mb8 
+				+service

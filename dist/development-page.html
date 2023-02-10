@@ -66,8 +66,11 @@
                 <li> <a href="#">arkada.webstudio@yandex.ru</a></li>
               </ul>
             </div>
-            <div class="header_btn btn btn-border btn-fill"> 
-              <button type="button">Заказать звонок</button>
+            <div class="header_btn btn btn-border hover-btn-border"> 
+              <button class="xl" type="button">Заказать звонок</button>
+            </div>
+            <div class="burger_trigger_w trigger" data-target="burger">
+              <div class="burger_trigger"><span> </span><span> </span></div>
             </div>
           </div>
         </div>
@@ -75,23 +78,31 @@
     </header>
     <div class="wrapper">
       <div class="base">
-        <section class="singleTemplate_head" background="i/single/development.jpg"> 
+        <section class="singleTemplate_head">
+          <div class="singleTemplate_hero--img"> <img src="i/single/development.jpg"/></div>
           <div class="section_in"> 
             <div class="singleTemplate_head_main"> 
               <div class="breadcrumb">
-                <ul class="breadcrumb__list">
-                  <li class="breadcrumb__item">
-                    <!-- if breadcrumb is single--><a class="breadcrumb__link" href="#" title="Главная">Главная</a>
-                  </li>
-                  <li class="breadcrumb__item">
-                    <!-- if breadcrumb is single--><a class="breadcrumb__link" href="#" title="Услуги">Услуги</a>
-                  </li>
-                </ul>
+                <div class="section_in"> 
+                  <div class="breadcrumb_main">
+                    <ul class="breadcrumb__list">
+                      <li class="breadcrumb__item">
+                        <!-- if breadcrumb is single--><a class="breadcrumb__link" href="#" title="Главная">Главная</a>
+                      </li>
+                      <li class="breadcrumb__item">
+                        <!-- if breadcrumb is single--><a class="breadcrumb__link" href="#" title="Услуги">Услуги</a>
+                      </li>
+                      <li class="breadcrumb__item"><span class="breadcrumb__link-current">Разработка сайтов</span></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <h1></h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <div class="trigger_popup btn"> 
-                <button type="button">Оставить заявку</button>
+              <div class="singleTemplate_head_content">
+                <h1>Разработка сайтов</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="trigger_popup btn hover-btn-border hover-btn-border">
+                  <button class="xxl" type="button">Оставить заявку</button>
+                </div>
               </div>
             </div>
           </div>
@@ -99,9 +110,9 @@
         <section class="single_body"> 
           <div class="section_in"> 
             <div class="single_body_main"> 
-              <div class="content_block"> 
+              <div class="content_block global-mb"> 
                 <div class="content_block_img"> <img src="i/single/content.jpg" alt=""/></div>
-                <div class="content_block_txt"> 
+                <div class="content_block_txt global_txt"> 
                   <h2>Наша миссия</h2>
                   <div class="content_block_description global_txt custom_list">
                     <p>Наша миссия — получение вами необходимого результата от проекта.</p>
@@ -109,12 +120,12 @@
                     <p>Мы не работаем по шаблону и к каждому новому проекту относимся как к новому и уникальному опыту, возможности создать нечто неповторимое, что будет радовать вас и приносить пользу годы.</p>
                     <p>Наши менеджеры всегда готовы учесть ваши идеи и личные предпочтения, сориентировать, предложить свежие и новые идеи, помочь вам с составлением технического задания для получения уникального проекта. Наш технический отдел обладает огромным опытом, но также любит и умеет осваивать новые технологии для более качественного решения поставленных задач.</p>
                   </div>
-                  <div class="content_block_link btn"> <a href="#">Заказать</a></div>
+                  <div class="content_block_link btn btn-fill hover-btn-fill"> <a class="xxl" href="#">Заказать</a></div>
                 </div>
               </div>
               <section class="tech"> 
                 <div class="section_in">
-                  <div class="tech_main"> 
+                  <div class="tech_main global-mb"> 
                     <div class="tech_title"> 
                       <h3>Технологии, которые используем</h3>
                     </div>
@@ -126,59 +137,60 @@
                       <li class="tech_item"> <img src="i/tech/tech_4.png" alt=""/></li>
                       <li class="tech_item"> <img src="i/tech/tech_5.png" alt=""/></li>
                       <li class="tech_item"> <img src="i/tech/tech_6.png" alt=""/></li>
+                      <li class="tech_item"> <img src="i/tech/tech_7.png" alt=""/></li>
                     </ul>
                   </div>
                 </div>
               </section>
-              <div class="solution_block"> 
-                <h2>Создадим идеальное решение для вашего бизнеса</h2>
-                <ul class="solution_list"> 
+              <div class="solution_block global-mb"> 
+                <h2 class="section_title">Создадим идеальное решение для вашего бизнеса</h2>
+                <ul class="solution_list grid-3"> 
                   <li class="solution_item"> 
                     <div class="solution_item_img"> <img src="i/single/solution_0.png" alt=""></div>
                     <div class="solution_item_content"> 
-                      <h3>Лендинг</h3>
+                      <h3 class="small-title">Лендинг</h3>
                       <p>Одностраничный сайт, который подойдет для тестирования ниш, продажи товаров, презентации услуг, вашего портфолио.</p><span>60 000</span>
-                    </div>
-                    <div class="solution_item_link trigger_popup"> 
-                      <button type="button">Заказать</button>
+                      <div class="solution_item_link trigger_popup btn-fill btn hover-btn-fill">
+                        <button class="xl" type="button">Заказать</button>
+                      </div>
                     </div>
                   </li>
                   <li class="solution_item"> 
                     <div class="solution_item_img"> <img src="i/single/solution_1.png" alt=""></div>
                     <div class="solution_item_content"> 
-                      <h3>Многостраничный сайт</h3>
+                      <h3 class="small-title">Многостраничный сайт</h3>
                       <p>Одностраничный сайт, который подойдет для тестирования ниш, продажи товаров, презентации услуг, вашего портфолио.</p><span>60 000</span>
-                    </div>
-                    <div class="solution_item_link trigger_popup"> 
-                      <button type="button">Заказать</button>
+                      <div class="solution_item_link trigger_popup btn-fill btn hover-btn-fill">
+                        <button class="xl" type="button">Заказать</button>
+                      </div>
                     </div>
                   </li>
                   <li class="solution_item"> 
                     <div class="solution_item_img"> <img src="i/single/solution_2.png" alt=""></div>
                     <div class="solution_item_content"> 
-                      <h3>Интернет-магазин</h3>
+                      <h3 class="small-title">Интернет-магазин</h3>
                       <p>Одностраничный сайт, который подойдет для тестирования ниш, продажи товаров, презентации услуг, вашего портфолио.</p><span>60 000</span>
-                    </div>
-                    <div class="solution_item_link trigger_popup"> 
-                      <button type="button">Заказать</button>
+                      <div class="solution_item_link trigger_popup btn-fill btn hover-btn-fill">
+                        <button class="xl" type="button">Заказать</button>
+                      </div>
                     </div>
                   </li>
                 </ul>
               </div>
-              <div class="workSlider_block"> 
-                <div class="section_head workSlider_head">
+              <div class="workSlider_block global-mb"> 
+                <div class="section_head section_title workSlider_head">
                   <div class="section_head_title">
                     <h4>Другие проекты</h4>
                   </div>
                   <div class="slider_nav workSlider_nav">
-                    <div class="slider_btn_nav workSlider_btn_prev">
+                    <div class="slider_btn_nav btn workSlider_btn_prev">
                       <button type="button">
                         <svg class="icon icon-prev ">
                           <use xlink:href="i/sprite/sprite.svg#prev"></use>
                         </svg>
                       </button>
                     </div>
-                    <div class="slider_btn_nav workSlider_btn_next">
+                    <div class="slider_btn_nav btn workSlider_btn_next">
                       <button type="button">
                         <svg class="icon icon-next ">
                           <use xlink:href="i/sprite/sprite.svg#next"></use>
@@ -189,12 +201,133 @@
                 </div>
                 <div class="workSlider_w"> 
                   <div class="workSlider_slider swiper"> 
-                    <div class="swiper-wrapper"> 
+                    <div class="swiper-wrapper">
                       <div class="swiper-slide"> 
                         <div class="project_item"> <a href="#">
                             <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
                             <div class="project_item_content"> 
-                              <h3>Дизайн интерьера “WP Interior design”</h3>
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
+                              <ul class="project_tag_list"> 
+                                <li> <a href="#">#Web-разработка</a></li>
+                                <li> <a href="#">#Контекстная реклама</a></li>
+                              </ul>
+                            </div></a></div>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <div class="project_item"> <a href="#">
+                            <div class="project_item_img"><img src="i/project/project.jpg" alt=""></div>
+                            <div class="project_item_content"> 
+                              <h3 class="small-title">Дизайн интерьера “WP Interior design”</h3>
                               <ul class="project_tag_list"> 
                                 <li> <a href="#">#Web-разработка</a></li>
                                 <li> <a href="#">#Контекстная реклама</a></li>
@@ -226,15 +359,15 @@
                       <div class="global_input footer_input">
                         <input type="tel" placeholder="Ваш телефон"/>
                       </div>
-                      <div class="footer_mod_textarea action_input action_textarea">
-                        <textarea placeholder="О вашем проекте (необязательно)"></textarea>
+                    </div>
+                    <div class="footer_mod_textarea action_input action_textarea global_input">
+                      <textarea placeholder="О вашем проекте (необязательно)" rows="3"></textarea>
+                    </div>
+                    <div class="footer_mod_bottom action_bottom"> 
+                      <div class="footer_mod_btn btn-fill submit_btn btn hover-btn-fill"> 
+                        <input class="xxl" type="submit" value="Отправить">
                       </div>
-                      <div class="footer_mod_bottom action_bottom"> 
-                        <div class="footer_mod_btn action_btn btn-fill"> 
-                          <button type="button">Отправить</button>
-                        </div>
-                        <div class="footer_mod_notice action_notice">Отправляя форму, вы соглашаетесь с <a href="#" target="_blank" >политикой конфиденциальности.</a></div>
-                      </div>
+                      <div class="footer_mod_notice action_notice">Отправляя форму, вы соглашаетесь с <a href="#" target="_blank" >политикой конфиденциальности.</a></div>
                     </div>
                   </form>
                 </div>
@@ -251,7 +384,7 @@
                   <p>Почта:</p>
                   <div class="footer_mail_link"> <a href="#">arkada.webstudio@yandex.ru</a></div>
                 </div>
-                <div class="footer_brief_link"> <a href="#">Заполнить бриф</a></div>
+                <div class="footer_brief_link btn btn-fill hover-btn-fill"> <a class="xl" href="#">Заполнить бриф</a></div>
               </div>
             </div>
             <div class="footer_bottom"> 
@@ -279,18 +412,32 @@
     <script src="js/libs.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/main.js"></script>
-    <div class="succes">
-      <div class="succes_main"> 
-        <p>Ваше сообщение успешно отправлено!</p>
-        <div class="succes_icon">
-           <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg></div>
-      </div>
-    </div>
-    <div class="failed">
-      <div class="failed_main"> 
-        <p>Проверьте правильность полей!</p>
-        <div class="failed_icon">
-           <svg class="checkmark_close" class="test-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="3" stroke-dasharray="100"><circle class="close__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon-path" id="check" d="M 15,15 L 32,33 M 32,15 L 15,33"></path></svg></div>
+    <div class="popup popup_form" data-id="form">
+      <div class="popup_bg"> </div>
+      <div class="popup_main popup_form_main">
+        <div class="popup_main_head"> 
+          <h3>Оставьте заявку</h3>
+          <p>Мы свяжемся с вами, чтобы обсудить проект!</p>
+        </div>
+        <div class="popup_forms"> 
+          <form class="action_form">
+            <div class="global_input action_input">
+              <input type="text" placeholder="Ваше имя"/>
+            </div>
+            <div class="global_input action_input">
+              <input type="tel" placeholder="Ваш телефон"/>
+            </div>
+            <div class="action_input action_textarea global_input">
+              <textarea placeholder="О вашем проекте (необязательно)" rows="6"></textarea>
+            </div>
+            <div class="action_bottom"> 
+              <div class="action_btn btn-fill btn submit_btn hover-btn-fill"> 
+                <input class="xl" type="submit" value="Отправить">
+              </div>
+              <div class="action_notice">Отправляя форму, вы соглашаетесь с <a href="#" target="_blank" >политикой конфиденциальности.</a></div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </body>

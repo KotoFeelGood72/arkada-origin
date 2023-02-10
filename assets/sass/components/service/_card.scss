@@ -1,0 +1,26 @@
+.service_item {
+	background-color: rgba(255, 255, 255, 0.06);
+	border-radius: 2rem;
+	overflow: hidden;
+	a {
+		display: block;
+		padding: $m4;
+	}
+	.service_item_txt {
+		margin: 2rem 0 7rem 0;
+		@include bp($point_4) {
+			margin: 2rem 0 4rem 0;
+		}
+	}
+	.service_item_link {
+		@include flex-start;
+		font-size: 2rem;
+		font-family: $font_2;
+		@include bp($point_4) {
+			font-size: 1.8rem;
+		}
+		p {
+			margin-right: 1.5rem;
+		}
+	}
+}

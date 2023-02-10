@@ -1,0 +1,33 @@
+.global_input  {
+	margin-bottom: 2rem;
+	position: relative;
+	width: 100%;
+	input, textarea {
+		@include app;
+		background: rgba(255, 255, 255, 0.1);
+		border: .1rem solid rgba(255, 255, 255, 0.08);
+		border-radius: .7rem;
+		color: $white;
+		font-size: 1.8rem;
+		font-family: $font_1;
+		padding: 2rem 3rem;
+		width: 100%;
+		transition: all .3s ease;
+
+		@include bp($point_4) {
+			font-size: 1.6rem;
+			padding: 1.5rem 2rem;
+		}
+		&:focus {
+			border-color: $light-vio;
+		}
+
+		&.is-succes {
+			border-color: $white;
+		}
+
+		&.is-invalid {
+			border-color: #941010;
+		}
+	}
+}

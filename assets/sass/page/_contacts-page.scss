@@ -1,0 +1,83 @@
+.page_contacts_list {
+	@include flex-space;
+	align-items: flex-start;
+	margin: -15rem -15rem 0 0;
+	padding-bottom: $m8;
+	@include bp($point_2) {
+		flex-wrap: wrap;
+		margin: -8rem -8rem 0 0;
+	}
+	@include bp($point_4) {
+		margin: -4rem -4rem 0 0;
+	}
+	&>li {
+		&>p {
+			margin-bottom: 3.8rem;
+			opacity: .5;
+			@include bp($point_4) {
+				margin-bottom: 2rem;
+			}
+		}
+		padding: 15rem 15rem 0 0;
+		@include bp($point_2) {
+			padding: 8rem 8rem 0 0;
+		}
+		@include bp($point_4) {
+			padding: 4rem 4rem 0 0;
+		}
+		a {
+			font-size: 3rem;
+			font-family: $font_2;
+			line-height: 3.5rem;
+			opacity: .5;
+			@include bp($point_4) {
+				font-size: 2rem;
+				line-height: 3rem;
+			}
+		}
+		ul {
+			li {
+				&:not(:last-child) {
+					margin-bottom: 3rem;
+					@include bp($point_4) {
+						margin-bottom: 1.5rem;
+					}
+				}
+				a {
+					color: $white;
+					opacity: 1;
+					span {
+						color: $dark-vio
+					}
+				}
+			}
+		}
+	}
+}
+
+.social_list {
+	@include flex-start;
+	margin: -6.3rem -6.3rem 0 0;
+	@include bp($point_4) {
+		margin: -3rem -3rem 0 0;
+	}
+	li {
+		padding: 6.3rem 6.3rem 0 0;
+		margin-bottom: 0!important;
+		@include bp($point_4) {
+			padding: 3rem 3rem 0  0;
+		}
+		&:last-child {
+			img {
+				width: 5rem;
+				height: 2.8rem;
+			}
+		}
+		a {
+			img {
+				width: 3.7rem;
+				height: 3.4rem;
+			}
+		}
+	}
+}
