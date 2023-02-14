@@ -9,6 +9,9 @@
 	font-size: 2rem;
 	color: $white;
 	@include flex-center;
+	@include bp($point_4) {
+		height: $header_mob
+	}
 }
 
 .header {
@@ -18,6 +21,9 @@
 .header_main {
 	@include flex-space;
 	padding: 2rem 0;
+	@include bp($point_4) {
+		padding: 1rem 0
+	}
 }
 .header_col_left {
 	@include flex-start;
@@ -31,7 +37,7 @@
 	max-width: 6.8rem;
 	width: 100%;
 	@include bp($point_4) {
-		max-width: 6rem;
+		max-width: 5rem;
 		margin-right: 4rem;
 	}
 }
@@ -43,6 +49,39 @@
 .header_nav_list {
 	position: relative;
 	@include flex-start;
+
+	.parent_element_item {
+		&:hover {
+			.headernav_submenu {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+			&>a {
+	
+				&:after {
+					transform: translateY(-50%) rotate(180deg);
+				}
+				&:before {
+					transform: translate(-50%, -50%) scaleX(100%);
+				}
+			}
+		}
+		&>a {
+			padding-right: 3rem;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 0;
+				width: 1.5rem;
+				height: .8rem;
+				background: url('../../i/global/arrow-down.svg') center/contain no-repeat;
+				transition: all .2s ease;
+			}
+		}
+	}
 }
 .header_nav_item {
 	padding: 2rem 0;
@@ -75,38 +114,7 @@
 
 }
 
-.parent_element_item {
-	&:hover {
-		.headernav_submenu {
-			opacity: 1;
-			visibility: visible;
-			transform: translateY(0);
-		}
-		&>a {
 
-			&:after {
-				transform: translateY(-50%) rotate(180deg);
-			}
-			&:before {
-				transform: translate(-50%, -50%) scaleX(100%);
-			}
-		}
-	}
-	&>a {
-		padding-right: 3rem;
-		&:after {
-			content: '';
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			right: 0;
-			width: 1.5rem;
-			height: .8rem;
-			background: url('../../i/global/arrow-down.svg') center/contain no-repeat;
-			transition: all .2s ease;
-		}
-	}
-}
 .headernav_submenu {
 	position: absolute;
 	top: 100%;
@@ -201,7 +209,8 @@
 		display: block;
 	}
 	@include bp($point_4) {
-		width: 5rem;
+		width: 4.5rem;
+		height: 2.5rem;
 	}
 	.burger_trigger {
 		position: relative;

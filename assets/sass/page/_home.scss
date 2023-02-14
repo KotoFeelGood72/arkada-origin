@@ -7,6 +7,9 @@
 	@include bp($point_2) {
 		margin-bottom: $m6;
 	}
+	@include bp($point_4) {
+		margin-top: -$header_mob;
+	}
 	button {
 		color: $white;
 	}
@@ -22,11 +25,11 @@
 	height: calc(100vh - $header - 4rem);
 	@include bp($point_2) {
 		height: calc(60vh - $header - 4rem);
-		padding: $m10 0;
+		padding: $m6 0;
 	}
 	@include bp($point_4) {
 		padding-bottom: 20rem;
-		height: calc(70vh - $header - 4rem);
+		height: calc(100vh - $header_mob - 4rem);
 	}
 }
 .hero_content {

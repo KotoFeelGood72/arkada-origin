@@ -44,10 +44,10 @@
           <div class="header_col_left"> 
             <div class="header_logo"> <a href="#"><img src="i/global/logo.svg" alt=""></a></div>
             <nav class="header_nav"> 
-              <ul class="header_nav_list">
+              <ul class="header_nav_list nav_list">
                 <li class="header_nav_item"> <a href="#">Главная</a></li>
                 <li class="header_nav_item"><a href="#">Услуги</a>
-                  <ul class="headernav_submenu"> 
+                  <ul class="headernav_submenu sub-menu">
                     <li> <a href="#">Разработка сайтов</a></li>
                     <li> <a href="#">Контекстная реклама</a></li>
                     <li> <a href="#">SEO продвижение</a></li>
@@ -66,7 +66,7 @@
                 <li> <a href="#">arkada.webstudio@yandex.ru</a></li>
               </ul>
             </div>
-            <div class="header_btn btn btn-border hover-btn-border"> 
+            <div class="header_btn btn btn-border hover-btn-border trigger" data-target="form"> 
               <button class="xl" type="button">Заказать звонок</button>
             </div>
             <div class="burger_trigger_w trigger" data-target="burger">
@@ -273,8 +273,13 @@
     <script src="js/menu.js"></script>
     <script src="js/main.js"></script>
     <div class="popup popup_form" data-id="form">
-      <div class="popup_bg"> </div>
+      <div class="popup_bg remove"> </div>
       <div class="popup_main popup_form_main">
+        <div class="popup_close remove"> 
+          <svg class="icon icon-close ">
+            <use xlink:href="i/sprite/sprite.svg#close"></use>
+          </svg>
+        </div>
         <div class="popup_main_head"> 
           <h3>Оставьте заявку</h3>
           <p>Мы свяжемся с вами, чтобы обсудить проект!</p>
@@ -298,6 +303,56 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+    <div class="popup burger" data-id="burger">
+      <div class="popup_bg"> </div>
+      <div class="popup_main burger_main"> 
+        <div class="remove burger_close"> 
+          <svg class="icon icon-close ">
+            <use xlink:href="i/sprite/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <nav class="burger_nav">
+          <ul class="burger_nav_list nav_list">
+            <li class="burger_nav_item"> <a href="#">Главная</a></li>
+            <li class="burger_nav_item"><a href="#">Услуги</a>
+              <ul class="burgernav_submenu sub-menu"> 
+                <li> <a href="#">Разработка сайтов</a></li>
+                <li> <a href="#">Контекстная реклама</a></li>
+                <li> <a href="#">SEO продвижение</a></li>
+              </ul>
+            </li>
+            <li class="burger_nav_item"> <a href="#">Проекты</a></li>
+            <li class="burger_nav_item"> <a href="#">О компании</a></li>
+            <li class="burger_nav_item"> <a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="burger_info">
+          <ul> 
+            <li> <a href="#">+7 995 223-30-41</a></li>
+            <li> <a href="#">arkada.webstudio@yandex.ru</a></li>
+          </ul>
+        </div>
+        <ul class="footer_social_list"> 
+          <li> <a href="#"><img src="i/social/wa.svg" alt=""></a></li>
+          <li> <a href="#"><img src="i/social/tg.svg" alt=""></a></li>
+          <li> <a href="#"><img src="i/social/vk.svg" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert success">
+      <div class="alert_main"> 
+        <p>Ваше сообщение успешно отправлено!</p>
+        <div class="alert_icon">
+           <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg></div>
+      </div>
+    </div>
+    <div class="alert failed">
+      <div class="alert_main"> 
+        <p>Проверьте правильность полей!</p>
+        <div class="alert_icon">
+           <svg class="checkmark" class="test-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="3" stroke-dasharray="100"><circle class="alert__circle" cx="26" cy="26" r="25" fill="none"/><path class="icon-path" id="check" d="M 15,15 L 32,33 M 32,15 L 15,33"></path></svg></div>
       </div>
     </div>
   </body>

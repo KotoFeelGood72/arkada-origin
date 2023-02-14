@@ -6,6 +6,9 @@
 		height: calc(60vh - $header);
 		margin-bottom: $m6;
 	}
+	@include bp($point_4) {
+		height: calc(100vh - $header_mob);
+	}
 }
 
 .singleTemplate_hero--img {
@@ -14,6 +17,9 @@
 	width: 100%;
 	top: -$header;
 	@include z-index(el);
+	@include bp($point_4) {
+		top: -$header_mob;
+	}
 	img {
 		height: 100%;
 		object-fit: cover;

@@ -6,7 +6,7 @@ header.header
 					a(href="#")
 						img(src="i/global/logo.svg", alt="")
 				nav.header_nav 
-					ul.header_nav_list
+					ul.header_nav_list.nav_list
 						-
 							var menu = [
 								{
@@ -30,7 +30,7 @@ header.header
 							if item.submenu
 								li.header_nav_item
 									a(href="#")=item.link 
-									ul.headernav_submenu 
+									ul.headernav_submenu.sub-menu
 										each item in ['Разработка сайтов', 'Контекстная реклама', 'SEO продвижение']
 											li 
 												a(href="#")=item 
@@ -44,7 +44,7 @@ header.header
 							a(href="#") +7 995 223-30-41
 						li 
 							a(href="#") arkada.webstudio@yandex.ru
-				.header_btn.btn.btn-border.hover-btn-border 
+				.header_btn.btn.btn-border.hover-btn-border.trigger(data-target="form") 
 					button(type="button" class="xl") Заказать звонок
 				.burger_trigger_w.trigger(data-target='burger')
 					.burger_trigger
