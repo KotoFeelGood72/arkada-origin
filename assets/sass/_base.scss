@@ -62,6 +62,10 @@ body {
 	padding: $header 0 0;
 
 	flex: 1 0 auto;
+
+	@include bp($point_4) {
+		padding: $header_mob 0 0;
+	}
 }
 
 a {

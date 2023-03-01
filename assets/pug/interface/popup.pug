@@ -1,6 +1,8 @@
 .popup.popup_form(data-id="form")
-	.popup_bg 
+	.popup_bg.remove 
 	.popup_main.popup_form_main
+		.popup_close.remove 
+			+icon('close')
 		.popup_main_head 
 			h3 Оставьте заявку
 			p Мы свяжемся с вами, чтобы обсудить проект!
@@ -20,3 +22,53 @@
 					.action_btn.btn-fill.btn.submit_btn.hover-btn-fill 
 						input(class="xl" type="submit", value="Отправить")
 					.action_notice!='Отправляя форму, вы соглашаетесь с <a href="#" target="_blank" >политикой конфиденциальности.</a>'
+
+
+.popup.burger(data-id="burger")
+	.popup_bg 
+	.popup_main.burger_main 
+		.remove.burger_close 
+			+icon('close')
+		nav.burger_nav
+			ul.burger_nav_list.nav_list
+						-
+							var menu = [
+								{
+									link: 'Главная',
+								},
+								{
+									link: 'Услуги',
+									submenu: true,
+								},
+								{
+									link: 'Проекты',
+								},
+								{
+									link: 'О компании',
+								},
+								{
+									link: 'Контакты',
+								}
+							]
+						each item in menu
+							if item.submenu
+								li.burger_nav_item
+									a(href="#")=item.link 
+									ul.burgernav_submenu.sub-menu 
+										each item in ['Разработка сайтов', 'Контекстная реклама', 'SEO продвижение']
+											li 
+												a(href="#")=item 
+							else 
+								li.burger_nav_item 
+									a(href="#")=item.link
+		.burger_info
+			ul 
+				li 
+					a(href="#") +7 995 223-30-41
+				li 
+					a(href="#") arkada.webstudio@yandex.ru
+		ul.footer_social_list 
+			each item in ['wa', 'tg', 'vk']
+				li 
+					a(href="#")
+						img(src=`i/social/${item}.svg`, alt="")

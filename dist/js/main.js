@@ -14,6 +14,11 @@ let $body,
 
 $(document).ready(function ($) {
 	$body = $('body');
+	modal();
+	checkSubmenu();
+	rotateCard();
+
+
 	if(devStatus) {
 		pageWidget(['index']);
 		pageWidget(['about-page']);
@@ -34,6 +39,9 @@ $(document).ready(function ($) {
 $(window).on('load', function () {
 	updateSizes();
 	loadFunc();
+	if(windowWidth < mediaPoint1) {
+		accordion('.parent_element_item a', '.burgernav_submenu');
+	}
 });
 
 $(window).on('resize', function () {
@@ -92,19 +100,6 @@ if ('objectFit' in document.documentElement.style === false) {
 	});
 }
 
-function succes(success) {
-	$(success).toggleClass('active');
-		setTimeout(function() {
-			$(success).removeClass('active')
-		}, 3000)
-}
-
-function failed(failed) {
-	$(failed).toggleClass('active');
-		setTimeout(function() {
-			$(failed).removeClass('active')
-		}, 3000)
-}
 
 function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
@@ -144,39 +139,6 @@ $(document).ready(function() {
 
 
 
-// const btnSubmit = document.querySelectorAll('button[type="submit"]')
-// Array.from(btnSubmit).map((item) => {
-// 	item.addEventListener('click', (e) => {
-// 		e.preventDefault();
-// 		succes('.succes')
-// 	})
-// })
-
-
-// function allDefautAnim(bottom = false, start = '-=30% center', end = 'bottom') {
-// 	const paralaxWrapper = Array.from(document.querySelectorAll('.sec_anim')).map(function(el) {
-// 		const arr = Array.from(el.querySelectorAll('.el_anim')).map(function (item, index) {
-// 			const tl = gsap.timeline();
-// 			ScrollTrigger.create({
-// 				animation: tl,
-// 				trigger: el,
-// 				start: start,
-// 				end: end,
-// 				ease: 'none',
-// 			})
-// 			tl.fromTo(item, {
-// 				y: 100, 
-// 				duration: .4,
-// 				autoAlpha: 0,
-// 			}, {
-// 				y: 0,
-// 				autoAlpha: 1,
-// 				delay: 0.1 + (0.1 * index),
-// 			});
-// 		});
-// 	});
-// }
-
 
 
 
@@ -196,37 +158,6 @@ $(document).ready(function()  {
 })
 
 
-
-async function maps(street, city, size) {
-
-	function init() {
-		const geocoder = ymaps.geocode(`${street} ${city}`);
-		geocoder.then(
-			async function (res) {
-				var myMapMobile = await new ymaps.Map('map', {
-						center: res.geoObjects.get(0).geometry.getCoordinates(),
-						zoom: 16,
-					}, {
-						searchControlProvider: 'yandex#search'
-					}),
-					myPlacemark = new ymaps.Placemark(myMapMobile.getCenter(), {
-						balloonContent: `${street} ${city}`
-					}, {
-						iconLayout: 'default#image',
-						iconImageHref: '/i/global/map.svg',
-						iconImageSize: size,
-						iconImageOffset: [-5, -38]
-					});
-
-				myMapMobile.geoObjects
-					.add(myPlacemark)
-				myMapMobile.behaviors.disable('scrollZoom')
-			}
-		);
-	}
-	await ymaps.ready(init);
-
-}
 
 const partnerSlider = new Swiper('.partners_slider', {
 	navigation: {
@@ -305,24 +236,104 @@ function rotateCard() {
 	})
 }
 
-rotateCard();
 
 function checkSubmenu() {
-	const menuList = document.querySelector('.header_nav_list');
-	let menuItem = menuList.querySelectorAll('li')
+	const menuList = document.querySelectorAll('.nav_list');
 
-	Array.from(menuItem).map((el) => {
-		let checkItems = el.children
-		Array.from(checkItems).map((items) =>{
-			if(items.classList.contains('headernav_submenu')) {
-				el.classList.add('parent_element_item')
-			}
+	Array.from(menuList).map((menuParentItem) => {
+		let menuItem = menuParentItem.querySelectorAll('li')
+	
+		Array.from(menuItem).map((el) => {
+			let checkItems = el.children
+			Array.from(checkItems).map((items) =>{
+				if(items.classList.contains('sub-menu')) {
+					el.classList.add('parent_element_item')
+				}
+			})
 		})
 	})
 }
 
-checkSubmenu();
 
+
+
+
+
+function succes(success) {
+	$(success).toggleClass('active');
+		setTimeout(function() {
+			$(success).removeClass('active')
+		}, 3000)
+}
+
+function failed(failed) {
+	$(failed).toggleClass('active');
+		setTimeout(function() {
+			$(failed).removeClass('active')
+		}, 3000)
+}
+
+
+
+function modal() {
+	let popup = document.querySelectorAll('.popup')
+	let btnArray = document.querySelectorAll('.trigger')
+	
+	btnArray.forEach((el) => {
+		el.addEventListener('click', function(e) {
+			e.preventDefault();
+			let path = e.currentTarget.dataset.target
+			
+			popup.forEach((el) => {
+				isRemove(el)
+				if(el.dataset.id == path) {
+					isOpen(el)
+				}
+			})
+			
+		})
+	})
+	
+
+	popup.forEach((pop) => {
+		let remove = pop.querySelectorAll('.remove')
+		remove.forEach(el => {
+			el.addEventListener('click', (e) => {
+				isRemove(pop);
+			})
+		});
+	})
+}
+
+
+
+function isOpen(popup) {
+	document.body.classList.add('fixed')
+	popup.classList.add('active')
+}
+
+function isRemove(popup) {
+	popup.classList.remove('active')
+	document.body.classList.remove('fixed')
+}
+
+function accordion(title, content) {
+	// hide all content			console.log('Good acc')
+	let accordionTitle = $(title),
+		accordionContent = $(content);
+	$(accordionContent).hide();
+	
+	$(accordionTitle).on('click', function () {
+		let $this = $(this);
+		$this.parent().toggleClass('active_mod').siblings().removeClass('active_mod');
+		$(accordionContent).slideUp();
+		console.log('Good acc')
+
+		if (!$this.next().is(":visible")) {
+			$this.next().slideDown();
+		}
+	});
+};
 
 
 
