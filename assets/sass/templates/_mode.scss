@@ -97,7 +97,7 @@
 	button, a, input[type="submit"] {
 		border: .1rem solid $dark-vio!important;
 		transition: all .2s ease;
-		&:hover {
+		&:hover, &.current-page-item {
 			background-color: $trans!important;
 			border-color: #FFFFFF33!important;
 		}
@@ -107,7 +107,7 @@
 .hover-btn-border {
 	button, a, input[type="submit"] {
 		transition: all .2s ease;
-		&:hover {
+		&:hover, &.current-page-item {
 			background-color: $dark-vio!important;
 			border-color: $trans!important;
 		}

@@ -77,20 +77,10 @@
 
 .adaptiveImg_gallery {
 	ul {
-		@include flex-space;
-		flex-wrap: wrap;
-		align-items: flex-end;
-		margin: -10rem -10rem 0 0;
-		@include bp($point_2) {
-			margin: 0;
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-			grid-gap: 5rem
-		}
+		width: 100%;
 		li {
-			padding: 10rem 10rem 0 0;
-			@include bp($point_2) {
-				padding: 0;
+			&:not(:last-child) {
+				margin-bottom: 2rem;
 			}
 		}
 	}

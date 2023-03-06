@@ -125,7 +125,7 @@
 .tech_list {
 	@include flex-space;
 	flex-wrap: wrap;
-	margin: -12rem -20.6rem 0 0;
+	margin: -12rem -10rem 0 0;
 	@include bp($point_2) {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
@@ -136,7 +136,13 @@
 		grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
 	}
 	li {
-		padding: 12rem 20.4rem 0 0;
+		padding: 12rem 10rem 0 0;
+		img {
+			max-width: 25rem;
+			@include bp($point_2) {
+				max-width: 20rem;
+			}
+		}
 		@include bp($point_2) {
 			padding: 0;
 		}

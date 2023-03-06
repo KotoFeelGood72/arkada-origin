@@ -55,6 +55,8 @@
 		&:not(:last-child) {
 			margin-right: 5.5rem;
 		}
+		
+
 		&>a {
 			position: relative;
 			&:before {
@@ -72,7 +74,7 @@
 				transition: all .3s ease;
 				transform-origin: left;
 			}
-			&:hover {
+			&:hover, &.current-menu-item {
 				&:before {
 					transform: translate(-50%, -50%) scaleX(100%);
 				}
@@ -155,7 +157,7 @@
 				transition: all .4s ease;
 				transform: translateX(-100%);
 			}
-			&:hover {
+			&:hover, &.current-menu-item {
 				color: $dark-vio;
 				&:before {
 					transform: translateX(0%);
