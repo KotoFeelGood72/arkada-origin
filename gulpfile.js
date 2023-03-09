@@ -231,7 +231,7 @@ gulp.task('imgMinify', function () {
 			mozjpeg: true,
 			gifsicle: true,
 			svgo: false,
-			concurrent: 10,
+			concurrent: 5,
 			quiet: false,
 		}), {
 			key: function (file) {
