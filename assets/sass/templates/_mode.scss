@@ -48,6 +48,13 @@
 		}
 	}
 
+	@include bp($point_2) {
+		&:before {
+			visibility: visible!important;
+			opacity: 1!important;
+		}
+	}
+
 	position: relative;
 
 	&:before {

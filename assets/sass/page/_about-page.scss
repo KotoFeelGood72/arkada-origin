@@ -47,7 +47,8 @@
 	position: relative;
 	height: 24.3rem;
 	border-radius: 2rem;
-	pointer-events: none;
+	// pointer-events: none;
+	cursor: pointer;
 	transition: transform 1s ease;
 	transform-style: preserve-3d;
 	user-select: none;
@@ -134,8 +135,8 @@
 	position: absolute;
 	top: 3rem;
 	right: 3rem;
-	cursor: pointer;
-	pointer-events: all;
+	// cursor: pointer;
+	pointer-events: none;
 	z-index: 11;
 	transition: all .3s ease;
 	svg {
@@ -158,6 +159,9 @@
 
 .content_block_img {
 	margin-right: $m6;
+	max-width: 58.6rem;
+	border-radius: 2rem;
+	overflow: hidden;
 	@include bp($point_2) {
 		margin: 0 0 $m4 0;
 	}

@@ -136,7 +136,7 @@
 				font-size: 2.6rem;
 			}
 			span {
-				color: $dark-vio;
+				color: $light-vio;
 			}
 		}
 		&:not(:last-child) {
@@ -184,6 +184,7 @@
 	border-top: .1rem solid rgba(255, 255, 255, 0.1);
 	padding-top: 3.5rem;
 	font-size: 1.4rem;
+	overflow-x: hidden;
 	@include bp($point_2) {
 		padding-top: 3rem;
 	}
@@ -219,6 +220,7 @@
 .footer_social_list {
 	@include flex-start;
 	margin: -2rem -4rem 0 0;
+	width: 100%;
 	@include bp($point_4) {
 		justify-content: flex-start;
 	}

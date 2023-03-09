@@ -229,9 +229,9 @@ function rotateCard() {
 
 	Array.from(cards).map((card, e) => {
 		card.addEventListener('click', (e) => {
-			if(e.target.classList.contains('direction_toggle')) {
+			// if(e.target.classList.contains('direction_toggle')) {
 				card.classList.toggle('active')
-			}
+			// }
 		})
 	})
 }
@@ -318,7 +318,6 @@ function isRemove(popup) {
 }
 
 function accordion(title, content) {
-	// hide all content			console.log('Good acc')
 	let accordionTitle = $(title),
 		accordionContent = $(content);
 	$(accordionContent).hide();
@@ -327,7 +326,6 @@ function accordion(title, content) {
 		let $this = $(this);
 		$this.parent().toggleClass('active_mod').siblings().removeClass('active_mod');
 		$(accordionContent).slideUp();
-		console.log('Good acc')
 
 		if (!$this.next().is(":visible")) {
 			$this.next().slideDown();

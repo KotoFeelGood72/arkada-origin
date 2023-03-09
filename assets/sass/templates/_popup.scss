@@ -278,12 +278,28 @@
 }
 
 .burgernav_submenu {
-	padding: 1rem 2rem 3rem 2rem;
+	// padding: 1rem 0 2rem 1rem;
+	padding: 0;
 	display: none;
+	opacity: 1;
+	visibility: visible;
+	position: static;
+	background-color: $trans;
+	min-width: 100%;
+	transform: none;
+
+	width: 100%;
 	&.active {
 		display: block;
 	}
 	li {
+		padding-left: 1rem;
+		&:first-child {
+			padding: 2rem 0 0 1rem;
+		}
+		&:last-child {
+			padding: 0 0 3rem 1rem;
+		}
 		&.active, &:hover, &:focus {
 			a {
 				color: $light-vio;
@@ -292,6 +308,7 @@
 		a {
 			font-size: 1.8rem;
 			font-family: $font_2;
+			color: $white;
 			@include bp($point_4) {
 				font-size: 1.6rem;
 			}

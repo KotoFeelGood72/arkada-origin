@@ -9,6 +9,9 @@
 		}
 		li {
 			padding: 2rem 2rem 0 0;
+			a {
+				line-height: 2rem;
+			}
 			@include bp($point_4) {
 				padding: 1rem 1rem 0 0;
 			}

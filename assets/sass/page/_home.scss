@@ -169,9 +169,14 @@
 .action_content {
 	max-width: 49.8rem;
 	margin-right: 20rem;
+	height: 42.5rem;
+	@include flex-space;
+	flex-direction: column;
+	align-items: flex-start;
 	@include bp($point_2) {
 		margin: 0 0 $m6 0;
 		max-width: 100%;
+		height: auto;
 	}
 }
 .action_content_head {
@@ -181,7 +186,7 @@
 		}
 	}
 	p {
-		margin: $m4 0 15.7rem 0;
+		margin: $m4 0 8rem 0;
 		@include bp($point_2) {
 			margin: 0 0 $m4 0;
 		}
@@ -259,7 +264,7 @@
 .homeProject_link {
 	a {
 		@include flex-start;
-		color: $dark-vio;
+		color: $light-vio;
 		font-size: 2.3rem;
 		line-height: 2.6rem;
 		font-family: $font_2;

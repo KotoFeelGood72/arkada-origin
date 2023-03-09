@@ -176,6 +176,10 @@
 		position: relative;
 		overflow: hidden;
 		transition: all .2s ease;
+		height: 71.8rem;
+		@include flex-space;
+		flex-direction: column;
+		align-items: flex-start;
 		@include bp($point_4) {
 			padding: 3rem 2rem;
 		}
@@ -212,6 +216,7 @@
 
 		ul {
 			margin-bottom: 12.2rem;
+			width: 100%;
 			@include bp($point_2){
 				margin-bottom: $m6;
 			}
