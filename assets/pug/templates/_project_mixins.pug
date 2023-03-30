@@ -230,3 +230,40 @@ mixin settings(data)
 
 
 // END
+
+// Seo text
+
+mixin seo-block(data)
+	if data.section
+		section.seo-block_section
+			.section_in
+				.seo-block--w.global-mb
+					.seo-block
+						h2 Заголовок для СЕО текста
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						h3 Подзаголовок меньше
+						p!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun. <a href="#">пример стилизации ссылки</a>'
+						ul
+							-for(i = 0; i < 5; i++)
+								li Список 1
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita deleniti fugiat repellendus illo voluptatibus quis perferendis ratione, quae, recusandae adipisci quia molestias possimus voluptas labore doloremque quibusdam officiis placeat autem.Doloremque laborum pariatur, harum consectetur ea, inventore molestias at voluptatibus libero commodi excepturi est alias aliquid provident. Perferendis ab mollitia voluptatibus labore optio cum, sed, magnam architecto nostrum suscipit nobis.Molestiae, voluptatibus facilis. Corporis mollitia suscipit molestiae eaque eveniet nostrum ipsum, hic vitae nemo nobis, eius, temporibus accusantium laboriosam. Distinctio natus consequuntur dicta, ut delectus aspernatur sed deserunt ratione alias.
+					.loadmore_btn.btn-fill.btn.hover-btn-fill
+						button(type="button") Показать больше
+	else
+		.seo-block--w.global-mb 
+			.seo-block
+				h2 Заголовок для СЕО текста
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				h3 Подзаголовок меньше
+				p!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun. <a href="#">пример стилизации ссылки</a>'
+				ul
+					-for(i = 0; i < 5; i++)
+						li Список 1
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita deleniti fugiat repellendus illo voluptatibus quis perferendis ratione, quae, recusandae adipisci quia molestias possimus voluptas labore doloremque quibusdam officiis placeat autem.Doloremque laborum pariatur, harum consectetur ea, inventore molestias at voluptatibus libero commodi excepturi est alias aliquid provident. Perferendis ab mollitia voluptatibus labore optio cum, sed, magnam architecto nostrum suscipit nobis.Molestiae, voluptatibus facilis. Corporis mollitia suscipit molestiae eaque eveniet nostrum ipsum, hic vitae nemo nobis, eius, temporibus accusantium laboriosam. Distinctio natus consequuntur dicta, ut delectus aspernatur sed deserunt ratione alias.
+			.loadmore_btn.btn-fill.btn.hover-btn-fill
+				button(type="button") Показать больше
+
+
+// end seo text

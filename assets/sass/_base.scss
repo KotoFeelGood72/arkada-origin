@@ -9,7 +9,7 @@ html {
 	@include bp(1920px, $direction:min) {
 		font-size: 10px;
 	}
-	@include bp($point_1) {
+	@include bp(1620px) {
 		font: 400 calc(100vw / 1920 * 12)/1.33 $font_1;
 	}
 	@include bp($point_2) {

@@ -59,25 +59,10 @@
 
 		&>a {
 			position: relative;
-			&:before {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%) scaleX(0%);
-				width: 145%;
-				height: 140%;
-				background-color: $dark-vio;
-				border-radius: 0.5rem;
-				@include z-index(el);
-				content: '';
-				opacity: .5;
-				transition: all .3s ease;
-				transform-origin: left;
-			}
+			border-bottom: .1rem solid $trans;
+			transition: all .3s ease;
 			&:hover, &.current-menu-item {
-				&:before {
-					transform: translate(-50%, -50%) scaleX(100%);
-				}
+				border-color: $white;
 			}
 		}
 	}
@@ -90,13 +75,10 @@
 				transform: translateY(0);
 			}
 			&>a {
-	
 				&:after {
 					transform: translateY(-50%) rotate(180deg);
 				}
-				&:before {
-					transform: translate(-50%, -50%) scaleX(100%);
-				}
+				border-color: $white;
 			}
 		}
 		&>a {
@@ -115,9 +97,6 @@
 		}
 	}
 }
-// .header_nav_item {
-
-// }
 
 
 .sub-menu {
