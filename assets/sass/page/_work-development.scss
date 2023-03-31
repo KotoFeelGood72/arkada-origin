@@ -53,6 +53,10 @@
 				margin: 3rem 0 0 -2rem;
 				width: 100%;
 			}
+
+			@include bp($point_5) {
+				margin: 2rem 0;
+			}
 			&:before {
 				position: absolute;
 				top: 0;
