@@ -19,28 +19,28 @@ $(document).ready(function ($) {
 	rotateCard();
 	visibleSeo();
 
-	if(devStatus) {
-		pageWidget(['index']);
-		pageWidget(['about-page']);
-		pageWidget(['contacts-page']);
-		pageWidget(['context-page']);
-		pageWidget(['development-page']);
-		pageWidget(['policy']);
-		pageWidget(['portfolio-page']);
-		pageWidget(['seo-page']);
-		pageWidget(['service-page']);
-		pageWidget(['work-context']);
-		pageWidget(['work-development']);
-		pageWidget(['work-seo']);
-		getAllClasses('html', '.elements_list');
-	}
+	// if(devStatus) {
+	// 	pageWidget(['index']);
+	// 	pageWidget(['about-page']);
+	// 	pageWidget(['contacts-page']);
+	// 	pageWidget(['context-page']);
+	// 	pageWidget(['development-page']);
+	// 	pageWidget(['policy']);
+	// 	pageWidget(['portfolio-page']);
+	// 	pageWidget(['seo-page']);
+	// 	pageWidget(['service-page']);
+	// 	pageWidget(['work-context']);
+	// 	pageWidget(['work-development']);
+	// 	pageWidget(['work-seo']);
+	// 	getAllClasses('html', '.elements_list');
+	// }
 });
 
 $(window).on('load', function () {
 	updateSizes();
 	loadFunc();
 	if(windowWidth < mediaPoint1) {
-		accordion('.parent_element_item a', '.burgernav_submenu');
+		createArrow();
 	}
 });
 
@@ -355,6 +355,20 @@ function visibleSeo() {
 }
 
 
+function createArrow() {
+	let menuItem = document.querySelector('.burger_nav_list>.parent_element_item')
+
+	let arrowDown = document.createElement('span');
+	arrowDown.innerText = '';
+	menuItem.appendChild(arrowDown);
+
+	arrowDown.addEventListener('click', (e) => {
+		if(e.currentTarget) {
+			arrowDown.previousElementSibling.classList.toggle('active')
+			e.currentTarget.classList.toggle('active_mod')
+		}
+	})
+}
 
 
 

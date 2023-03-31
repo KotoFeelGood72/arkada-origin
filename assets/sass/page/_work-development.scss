@@ -85,7 +85,7 @@
 		@include flex-space;
 		flex-wrap: wrap;
 		align-items: flex-end;
-		margin: -8rem -8rem 0 0;
+		margin: -6rem -6rem 0 0;
 
 		@include bp($point_2) {
 			margin: 0;
@@ -94,7 +94,7 @@
 			grid-gap: 5rem
 		}
 		li {
-			padding: 8rem 8rem 0 0;
+			padding: 6rem 6rem 0 0;
 
 			&:nth-child(1) {
 				img {
