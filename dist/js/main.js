@@ -19,21 +19,23 @@ $(document).ready(function ($) {
 	rotateCard();
 	visibleSeo();
 
-	// if(devStatus) {
-	// 	pageWidget(['index']);
-	// 	pageWidget(['about-page']);
-	// 	pageWidget(['contacts-page']);
-	// 	pageWidget(['context-page']);
-	// 	pageWidget(['development-page']);
-	// 	pageWidget(['policy']);
-	// 	pageWidget(['portfolio-page']);
-	// 	pageWidget(['seo-page']);
-	// 	pageWidget(['service-page']);
-	// 	pageWidget(['work-context']);
-	// 	pageWidget(['work-development']);
-	// 	pageWidget(['work-seo']);
-	// 	getAllClasses('html', '.elements_list');
-	// }
+	if(devStatus) {
+		pageWidget(['index']);
+		pageWidget(['about-page']);
+		pageWidget(['contacts-page']);
+		pageWidget(['context-page']);
+		pageWidget(['development-page']);
+		pageWidget(['complete-page']);
+		pageWidget(['single-complete']);
+		pageWidget(['policy']);
+		pageWidget(['portfolio-page']);
+		pageWidget(['seo-page']);
+		pageWidget(['service-page']);
+		pageWidget(['work-context']);
+		pageWidget(['work-development']);
+		pageWidget(['work-seo']);
+		getAllClasses('html', '.elements_list');
+	}
 });
 
 $(window).on('load', function () {

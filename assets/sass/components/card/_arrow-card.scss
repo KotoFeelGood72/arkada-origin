@@ -1,0 +1,62 @@
+.arrow_card--img {
+	height: 21.8rem;
+	img {
+		object-fit: cover;
+		height: 100%;
+	}
+}
+
+.arrow-card {
+	background: rgba(255, 255, 255, 0.06);
+	border-radius: 1.5rem;
+	display: block;
+	overflow: hidden;
+
+	&:hover {
+		.arrow_card--link {
+			background-color: $light-vio;
+		}
+	}
+}
+
+.arrow_card--content {
+	margin-bottom: 3.5rem;
+
+
+	.fz20 {
+		padding: 2rem 0 1.5rem 0;
+	}
+
+	p {
+		font-size: 1.6rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		line-height: 1.8rem;
+		max-height: 3.8rem;
+	}
+}
+
+.arrow_card--bottom {
+	@include flex-space;
+}
+
+.card_price {
+
+}
+
+.arrow_card--link {
+	width: 4.7rem;
+	height: 4.7rem;
+	border-radius: .7rem;
+	background-color: rgba(255, 255, 255, 0.103);
+	@include flex-center;
+
+	transition: all .3s ease;
+}
+
+.arrow_card--contentWrapper {
+	padding: 2rem 2.5rem 2.5rem 2.5rem;
+}

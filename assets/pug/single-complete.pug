@@ -1,0 +1,62 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Сайт для строительной сферы'}
+block content_block
+	+singleHead({
+		img: 'development',
+		page: 'Готовые решения',
+		title: array.title_inner,
+		tag: ['#Название сферы']
+	})
+	section.workSingle 
+		.section_in 
+			.workSingle_main 
+				+serviceWork
+				//- +target
+				+review-site({
+					title: 'Главная страница',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+					img: 'banner-1',
+					tag: 'h2'
+				})
+				+review-site({
+					title: 'Заголовок',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+					img: 'banner-2',
+					tag: 'h3'
+				})
+				.designBlock.global-mb
+					.adaptiveBlock 
+						.adaptiveBlock_head 
+							h4 Адаптив сайта
+							p Специализируясь на разработке сайтов под ключ и продвижении, мы проводим комплексную работу, которая дает гарантированный результат.
+						.adaptiveImg_gallery
+							ul
+								li 
+									img(src="i/single/mobile.png", alt="")
+								li 
+									img(src="i/single/tablet.png", alt="")
+								li 
+									img(src="i/single/desktop.png", alt="")
+				.workSlider_block.global-mb 
+					+sectionHead({
+						title: 'Другие проекты',
+						class: 'workSlider'
+					})
+					.workSlider_w
+						.workSlider_slider.swiper 
+							.swiper-wrapper
+								-for(i = 0; i < 12; i++) 
+									.swiper-slide 
+										.project_item.hovered-transform 
+											a(href="#")
+												.project_item_img
+													img(src="i/project/project.jpg", alt="")
+												.project_item_content 
+													h3.small-title Дизайн интерьера “WP Interior design”
+													ul.project_tag_list 
+														each item in ['Web-разработка', 'Контекстная реклама']
+															li 
+																a(href="#")=`#${item}`
+	+seo-block({section: true,})

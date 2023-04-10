@@ -1,0 +1,36 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Web studio Arkada'}
+block content_block
+	+bread(['Главная'], 'Готовые решения', title=true)
+	section.page-content 
+		.section_in 
+			.page_content_main.pb8
+				.page_content_tab 
+					ul 
+						-for(i = 0; i < 3; i++)
+							li
+								.btn.hover-btn-border
+									a(href="#" class="xl") Название сферы
+				ul.grid-4.pb8
+					-for(i = 0; i < 8; i++)
+						li.arrow_card--w 
+							+arrow-card
+				.complete-banner.global-mb8(style="background: url('../i/banner.png')")
+					.complete_banner--content
+						h3 Интернет магазин
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+						.banner_btn--group 
+							.trigger_popup.btn-fill.hover-btn-fill
+								button(type="button" class="xxl btn") Оставить заявку
+							.btn.hover-btn-border.hover-btn-border
+								a(href="/" class="xxl") Подробнее
+						.default-link 
+							a(href="#")
+								p.fz20 Все интернет магазины
+								+icon('arrow')
+				ul.grid-4.pt8
+					-for(i = 0; i < 8; i++)
+						li.arrow_card--w 
+							+arrow-card

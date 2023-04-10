@@ -1,35 +1,35 @@
 // Tech // 
 
 mixin tech 
-	section.tech 
-		.section_in
-			.tech_main.global-mb 
-				.tech_title 
-					h3 Технологии, которые используем
-				ul.tech_list 
-					-for(i = 0; i < 8; i++)
-						- var img = 'i/tech/tech_' + i + '.png'
-							li.tech_item 
-								img(src=img, alt="")
+  section.tech 
+    .section_in
+      .tech_main.global-mb 
+        .tech_title 
+          h3 Технологии, которые используем
+        ul.tech_list 
+          -for(i = 0; i < 8; i++)
+            - var img = 'i/tech/tech_' + i + '.png'
+              li.tech_item 
+                img(src=img, alt="")
 
 
 // End
 
 // Service
 mixin service 
-	ul.service_grid.grid-3 
-		-for(i = 0; i < 6; i++)
-			li.service_item.hovered-el 
-				a(href="#")
-					.service_item_head
-						.service_item_title 
-							h3.small-title Разработка сайтов
-						.service_item_txt 
-							p Сайт, разработанный в нашей студии, поможет вашим клиентам получить информацию о вашей компании и её услугах.
-					.service_item_link 
-						p Подробнее
-						.service_itemLink_icon
-							+icon('arrow')
+  ul.service_grid.grid-3 
+    -for(i = 0; i < 6; i++)
+      li.service_item.hovered-el 
+        a(href="#")
+          .service_item_head
+            .service_item_title 
+              h3.small-title Разработка сайтов
+            .service_item_txt 
+              p Сайт, разработанный в нашей студии, поможет вашим клиентам получить информацию о вашей компании и её услугах.
+          .service_item_link 
+            p Подробнее
+            .service_itemLink_icon
+              +icon('arrow')
 
 
 
@@ -38,8 +38,8 @@ mixin service
 // Input
 
 mixin input(data)
-	.global_input(class=data.class ? data.class : data.class="footer_input")
-		input(type=data.type ? data.type : data.type="text" placeholder=data.place ? data.place : data.place="Ваше имя")
+  .global_input(class=data.class ? data.class : data.class="footer_input")
+    input(type=data.type ? data.type : data.type="text" placeholder=data.place ? data.place : data.place="Ваше имя")
 
 // End mixin 
 
@@ -49,80 +49,80 @@ mixin input(data)
 // Project list
 
 mixin project 
-	ul.project_grid.grid-3 
-		-for(i = 0; i < 6; i++)
-			li.project_item.hovered-transform 
-				.project_item_img
-					a(href="#") 
-						img(src="i/project/project.jpg", alt="")
-				.project_item_content
-					a(href="#") 
-						h3.small-title Дизайн интерьера “WP Interior design”
-					ul.project_tag_list 
-						each item in ['Web-разработка', 'Контекстная реклама']
-							li 
-								a(href="#")=`#${item}` 
+  ul.project_grid.grid-3 
+    -for(i = 0; i < 6; i++)
+      li.project_item.hovered-transform 
+        .project_item_img
+          a(href="#") 
+            img(src="i/project/project.jpg", alt="")
+        .project_item_content
+          a(href="#") 
+            h3.small-title Дизайн интерьера “WP Interior design”
+          ul.project_tag_list 
+            each item in ['Web-разработка', 'Контекстная реклама']
+              li 
+                a(href="#")=`#${item}` 
 
 
 // End
 
 // Head section
 mixin sectionHead(data)
-	.section_head.section_title(class=`${data.class}_head`)
-		.section_head_title
-			h4=data.title
-		.slider_nav(class=`${data.class}_nav`)
-			.slider_btn_nav.btn(class=`${data.class}_btn_prev`)
-				button(type="button")
-					+icon('prev')
-			.slider_btn_nav.btn(class=`${data.class}_btn_next`)
-				button(type="button")
-					+icon('next')
+  .section_head.section_title(class=`${data.class}_head`)
+    .section_head_title
+      h4=data.title
+    .slider_nav(class=`${data.class}_nav`)
+      .slider_btn_nav.btn(class=`${data.class}_btn_prev`)
+        button(type="button")
+          +icon('prev')
+      .slider_btn_nav.btn(class=`${data.class}_btn_next`)
+        button(type="button")
+          +icon('next')
 
 // 
 
 // Partners
 mixin partners
-	section.partners 
-		.section_in 
-			.partners_main.global-mb 
-				+sectionHead({
-					title: 'Наши партнеры',
-					class: 'partners'
-				})
-				.partners_slider_w 
-					.partners_slider.swiper 
-						.swiper-wrapper
-							-for(i = 0; i < 12; i++) 
-								.swiper-slide 
-									.partners_slide
-										img(src="i/tech/tech_1.png", alt="")
+  section.partners 
+    .section_in 
+      .partners_main.global-mb 
+        +sectionHead({
+          title: 'Наши партнеры',
+          class: 'partners'
+        })
+        .partners_slider_w 
+          .partners_slider.swiper 
+            .swiper-wrapper
+              -for(i = 0; i < 12; i++) 
+                .swiper-slide 
+                  .partners_slide
+                    img(src="i/tech/tech_1.png", alt="")
 
 // End
 
 // Content block //
 
 mixin content_block(data)
-	.content_block.global-mb 
-		.content_block_img 
-			img(src=`i/${data.img}.jpg`, alt="")
-		.content_block_txt.global_txt 
-			h2 Наша миссия
-			.content_block_description.global_txt.custom_list
-				if data.txt === true 
-					p Наша миссия — получение вами необходимого результата от проекта.
-					p Не важно, какова ваша цель — увеличение прибыли компании, оптимизация рабочих процессов или просто создание личного пространства в интернете. Мы поможем вам в решении любых задач.
-					p Мы не работаем по шаблону и к каждому новому проекту относимся как к новому и уникальному опыту, возможности создать нечто неповторимое, что будет радовать вас и приносить пользу годы.
-					p Наши менеджеры всегда готовы учесть ваши идеи и личные предпочтения, сориентировать, предложить свежие и новые идеи, помочь вам с составлением технического задания для получения уникального проекта. Наш технический отдел обладает огромным опытом, но также любит и умеет осваивать новые технологии для более качественного решения поставленных задач.
-				else 
-					ul 
-						li Если у вас есть сайт, и вы хотите, чтобы его находили в интернете;
-						li Вы хотите сэкономить на рекламе и привлечь внимание аудитории;
-						li Вы хотите обеспечить постоянный рост и развитие сайта;
-						li Вы хотите создать стабильный поток целевой аудитории.
-			if data.btn === true 
-				.content_block_link.btn.btn-fill.hover-btn-fill 
-					a(href="#" class="xxl") Заказать
+  .content_block.global-mb 
+    .content_block_img 
+      img(src=`i/${data.img}.jpg`, alt="")
+    .content_block_txt.global_txt 
+      h2 Наша миссия
+      .content_block_description.global_txt.custom_list
+        if data.txt === true 
+          p Наша миссия — получение вами необходимого результата от проекта.
+          p Не важно, какова ваша цель — увеличение прибыли компании, оптимизация рабочих процессов или просто создание личного пространства в интернете. Мы поможем вам в решении любых задач.
+          p Мы не работаем по шаблону и к каждому новому проекту относимся как к новому и уникальному опыту, возможности создать нечто неповторимое, что будет радовать вас и приносить пользу годы.
+          p Наши менеджеры всегда готовы учесть ваши идеи и личные предпочтения, сориентировать, предложить свежие и новые идеи, помочь вам с составлением технического задания для получения уникального проекта. Наш технический отдел обладает огромным опытом, но также любит и умеет осваивать новые технологии для более качественного решения поставленных задач.
+        else 
+          ul 
+            li Если у вас есть сайт, и вы хотите, чтобы его находили в интернете;
+            li Вы хотите сэкономить на рекламе и привлечь внимание аудитории;
+            li Вы хотите обеспечить постоянный рост и развитие сайта;
+            li Вы хотите создать стабильный поток целевой аудитории.
+      if data.btn === true 
+        .content_block_link.btn.btn-fill.hover-btn-fill 
+          a(href="#" class="xxl") Заказать
 
 // END //
 
@@ -131,22 +131,22 @@ mixin content_block(data)
 // Single template head
 
 mixin singleHead(data)
-	section.singleTemplate_head
-		.singleTemplate_hero--img 
-			img(src=`i/single/${data.img}.jpg`)
-		.section_in 
-			.singleTemplate_head_main 
-				+bread(['Главная', `${data.page}`], data.title, data.vis=true)
-				.singleTemplate_head_content
-					h1=data.title
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					if data.btn === true
-						.trigger_popup.btn.hover-btn-border.hover-btn-border
-							button(type="button" class="xxl") Оставить заявку
-					if data.tag
-						ul
-							each item in data.tag 
-								li=item
+  section.singleTemplate_head
+    .singleTemplate_hero--img 
+      img(src=`i/single/${data.img}.jpg`)
+    .section_in 
+      .singleTemplate_head_main 
+        +bread(['Главная', `${data.page}`], data.title, data.vis=true)
+        .singleTemplate_head_content
+          h1=data.title
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          if data.btn === true
+            .trigger_popup.btn.hover-btn-border.hover-btn-border
+              button(type="button" class="xxl") Оставить заявку
+          if data.tag
+            ul
+              each item in data.tag 
+                li=item
 
 
 // END
@@ -154,39 +154,39 @@ mixin singleHead(data)
 // Text block standart
 
 mixin txt_block(data)
-	.defaultBlock.global-mb 
-		.defaulBlock_title 
-			h2=data.title 
-		.defaultBlock_txt.global_txt
-			p Поисковая оптимизация — комплекс мероприятий по внутренней и внешней оптимизации для поднятия позиций сайта в результатах выдачи поисковых систем по определённым запросам пользователей, с целью увеличения сетевого трафика (для информационных ресурсов) и потенциальных клиентов (для коммерческих ресурсов) и последующей монетизации (получение дохода) этого трафика.
-			p Наши специалисты выполнят все необходимые работы и помогут вам продвинуть сайт в ТОП поисковых систем Яндекс и Google.
+  .defaultBlock.global-mb 
+    .defaulBlock_title 
+      h2=data.title 
+    .defaultBlock_txt.global_txt
+      p Поисковая оптимизация — комплекс мероприятий по внутренней и внешней оптимизации для поднятия позиций сайта в результатах выдачи поисковых систем по определённым запросам пользователей, с целью увеличения сетевого трафика (для информационных ресурсов) и потенциальных клиентов (для коммерческих ресурсов) и последующей монетизации (получение дохода) этого трафика.
+      p Наши специалисты выполнят все необходимые работы и помогут вам продвинуть сайт в ТОП поисковых систем Яндекс и Google.
 
 // End //
 
 // Service work
 mixin serviceWork
-	.serviceWork.global-mb 
-		.serviceWork_txt.global_txt 
-			h2 О компании
-			p Специализируясь на разработке сайтов под ключ и продвижении, мы проводим комплексную работу, которая дает гарантированный результат.
-			p Слаженные действия специалистов позволяют максимально настроить всю работу на реализацию поставленных целей и задач.
-		.serviceWork_card 
-			ul
-				li Москва
-				li 20.12.2022
-				li 
-					a(href="#") https://sunrise.arkada-web-studio.ru/
+  .serviceWork.global-mb 
+    .serviceWork_txt.global_txt 
+      h2 О компании
+      p Специализируясь на разработке сайтов под ключ и продвижении, мы проводим комплексную работу, которая дает гарантированный результат.
+      p Слаженные действия специалистов позволяют максимально настроить всю работу на реализацию поставленных целей и задач.
+    .serviceWork_card 
+      ul
+        li Москва
+        li 20.12.2022
+        li 
+          a(href="#") https://sunrise.arkada-web-studio.ru/
 
 // End
 
 // Target block
 
 mixin target
-	.targetBlock.custom_list.global-mb 
-		h3.section_title Цели и задачи
-		ul.target_list.custom_list.grid-2
-			-for(i = 0; i < 4; i++)
-				li Увеличение количества посетителей из поисковых систем;
+  .targetBlock.custom_list.global-mb 
+    h3.section_title Цели и задачи
+    ul.target_list.custom_list.grid-2
+      -for(i = 0; i < 4; i++)
+        li Увеличение количества посетителей из поисковых систем;
 
 
 // End
@@ -194,38 +194,38 @@ mixin target
 // Settings
 
 mixin settings(data) 
-	.settingBlock.global-mb 
-		.settingBlock_txt.global_txt
-			h3 Решения
-			span.small-title Было настроено 44 рекламных кампании
-			p На разные направления клиники, например: лазерная коррекция зрения, катаракта, детское отделение, и т.д
-		.settingBlock_service
-			if data.list === true
-				ul.dotted_list
-					li 
-						p РСЯ
-						span 10 рекламных кампаний
-					li 
-						p Поисковая реклама
-						span 30 рекламных кампаний
-					li 
-						p Мастер кампаний
-						span 1 рекламная кампания
-					li 
-						p Баннер на поиске
-						span 3 рекламных кампании
-				ul.default_list 
-					each item in ['Roistat (коллтрекинг, сквозная аналитика)', 'Яндекс метрика', 'Goole analytic', 'GTM', 'Mango (коллтрекинг, сквозная аналитика)']
-						li=item
-			else 
-				.settingBlock_txt_list 
-					li 
-						h2 Технические доработки
-						p Есть тематики, по которым при всем желании не удастся протащить молодой сайт в топ-10 по высокочастотным запросам — со спецтехникой такая же история.Но в рамках SEO мы не только создаем поддомены, шаманим с метатегами и создаем индексируемые страницы категорий.
-						p Мы много работаем с сайтом: правим код, изучаем поведенческие, тестируем гипотезы, улучшаем юзабилити, уменьшаем отказы. Это помогает окупить оптимизацию, даже если позиции не сильно растут — ведь зато растут конверсии, а из-за этого тот же контекст становится крутить выгодней.
-					li 
-						h3 Подзаголовок 2
-						p Есть тематики, по которым при всем желании не удастся протащить молодой сайт в топ-10 по высокочастотным запросам — со спецтехникой такая же история.Но в рамках SEO мы не только создаем поддомены, шаманим с метатегами и создаем индексируемые страницы категорий.
+  .settingBlock.global-mb 
+    .settingBlock_txt.global_txt
+      h3 Решения
+      span.small-title Было настроено 44 рекламных кампании
+      p На разные направления клиники, например: лазерная коррекция зрения, катаракта, детское отделение, и т.д
+    .settingBlock_service
+      if data.list === true
+        ul.dotted_list
+          li 
+            p РСЯ
+            span 10 рекламных кампаний
+          li 
+            p Поисковая реклама
+            span 30 рекламных кампаний
+          li 
+            p Мастер кампаний
+            span 1 рекламная кампания
+          li 
+            p Баннер на поиске
+            span 3 рекламных кампании
+        ul.default_list 
+          each item in ['Roistat (коллтрекинг, сквозная аналитика)', 'Яндекс метрика', 'Goole analytic', 'GTM', 'Mango (коллтрекинг, сквозная аналитика)']
+            li=item
+      else 
+        .settingBlock_txt_list 
+          li 
+            h2 Технические доработки
+            p Есть тематики, по которым при всем желании не удастся протащить молодой сайт в топ-10 по высокочастотным запросам — со спецтехникой такая же история.Но в рамках SEO мы не только создаем поддомены, шаманим с метатегами и создаем индексируемые страницы категорий.
+            p Мы много работаем с сайтом: правим код, изучаем поведенческие, тестируем гипотезы, улучшаем юзабилити, уменьшаем отказы. Это помогает окупить оптимизацию, даже если позиции не сильно растут — ведь зато растут конверсии, а из-за этого тот же контекст становится крутить выгодней.
+          li 
+            h3 Подзаголовок 2
+            p Есть тематики, по которым при всем желании не удастся протащить молодой сайт в топ-10 по высокочастотным запросам — со спецтехникой такая же история.Но в рамках SEO мы не только создаем поддомены, шаманим с метатегами и создаем индексируемые страницы категорий.
 
 
 
@@ -234,36 +234,82 @@ mixin settings(data)
 // Seo text
 
 mixin seo-block(data)
-	if data.section
-		section.seo-block_section
-			.section_in
-				.seo-block--w.global-mb
-					.seo-block
-						h2 Заголовок для СЕО текста
-						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-						h3 Подзаголовок меньше
-						p!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun. <a href="#">пример стилизации ссылки</a>'
-						ul
-							-for(i = 0; i < 5; i++)
-								li Список 1
-						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita deleniti fugiat repellendus illo voluptatibus quis perferendis ratione, quae, recusandae adipisci quia molestias possimus voluptas labore doloremque quibusdam officiis placeat autem.Doloremque laborum pariatur, harum consectetur ea, inventore molestias at voluptatibus libero commodi excepturi est alias aliquid provident. Perferendis ab mollitia voluptatibus labore optio cum, sed, magnam architecto nostrum suscipit nobis.Molestiae, voluptatibus facilis. Corporis mollitia suscipit molestiae eaque eveniet nostrum ipsum, hic vitae nemo nobis, eius, temporibus accusantium laboriosam. Distinctio natus consequuntur dicta, ut delectus aspernatur sed deserunt ratione alias.
-					.loadmore_btn.btn-fill.btn.hover-btn-fill
-						button(type="button") Показать больше
-	else
-		.seo-block--w.global-mb 
-			.seo-block
-				h2 Заголовок для СЕО текста
-				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				h3 Подзаголовок меньше
-				p!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun. <a href="#">пример стилизации ссылки</a>'
-				ul
-					-for(i = 0; i < 5; i++)
-						li Список 1
-				p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita deleniti fugiat repellendus illo voluptatibus quis perferendis ratione, quae, recusandae adipisci quia molestias possimus voluptas labore doloremque quibusdam officiis placeat autem.Doloremque laborum pariatur, harum consectetur ea, inventore molestias at voluptatibus libero commodi excepturi est alias aliquid provident. Perferendis ab mollitia voluptatibus labore optio cum, sed, magnam architecto nostrum suscipit nobis.Molestiae, voluptatibus facilis. Corporis mollitia suscipit molestiae eaque eveniet nostrum ipsum, hic vitae nemo nobis, eius, temporibus accusantium laboriosam. Distinctio natus consequuntur dicta, ut delectus aspernatur sed deserunt ratione alias.
-			.loadmore_btn.btn-fill.btn.hover-btn-fill
-				button(type="button") Показать больше
+  if data.section
+    section.seo-block_section
+      .section_in
+        .seo-block--w.global-mb
+          .seo-block
+            h2 Заголовок для СЕО текста
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            h3 Подзаголовок меньше
+            p!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun. <a href="#">пример стилизации ссылки</a>'
+            ul
+              -for(i = 0; i < 5; i++)
+                li Список 1
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita deleniti fugiat repellendus illo voluptatibus quis perferendis ratione, quae, recusandae adipisci quia molestias possimus voluptas labore doloremque quibusdam officiis placeat autem.Doloremque laborum pariatur, harum consectetur ea, inventore molestias at voluptatibus libero commodi excepturi est alias aliquid provident. Perferendis ab mollitia voluptatibus labore optio cum, sed, magnam architecto nostrum suscipit nobis.Molestiae, voluptatibus facilis. Corporis mollitia suscipit molestiae eaque eveniet nostrum ipsum, hic vitae nemo nobis, eius, temporibus accusantium laboriosam. Distinctio natus consequuntur dicta, ut delectus aspernatur sed deserunt ratione alias.
+          .loadmore_btn.btn-fill.btn.hover-btn-fill
+            button(type="button") Показать больше
+  else
+    .seo-block--w.global-mb 
+      .seo-block
+        h2 Заголовок для СЕО текста
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        h3 Подзаголовок меньше
+        p!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun. <a href="#">пример стилизации ссылки</a>'
+        ul
+          -for(i = 0; i < 5; i++)
+            li Список 1
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita deleniti fugiat repellendus illo voluptatibus quis perferendis ratione, quae, recusandae adipisci quia molestias possimus voluptas labore doloremque quibusdam officiis placeat autem.Doloremque laborum pariatur, harum consectetur ea, inventore molestias at voluptatibus libero commodi excepturi est alias aliquid provident. Perferendis ab mollitia voluptatibus labore optio cum, sed, magnam architecto nostrum suscipit nobis.Molestiae, voluptatibus facilis. Corporis mollitia suscipit molestiae eaque eveniet nostrum ipsum, hic vitae nemo nobis, eius, temporibus accusantium laboriosam. Distinctio natus consequuntur dicta, ut delectus aspernatur sed deserunt ratione alias.
+      .loadmore_btn.btn-fill.btn.hover-btn-fill
+        button(type="button") Показать больше
 
 
 // end seo text
+
+// Arrow card
+
+mixin arrow-card(data)
+  a(href="/").arrow-card 
+    .arrow_card--img 
+      img(src="i/project/project.jpg", alt="")
+    .arrow_card--contentWrapper
+      .arrow_card--content 
+        h3.fz20 Сайт для строительной сферы
+        p Одностраничный сайт, который подойдет для тестирования ниш...
+      .arrow_card--bottom 
+        .card_price.fz23 от 60 000 ₽
+        .arrow_card--link
+          +icon('chevron')
+
+
+// End arrow card
+
+// Heading block
+
+mixin heading(data)
+  .heading-block
+    if data.title 
+      .heading-title!=`<${data.tag}>${data.title}</${data.tag}>`
+    else
+
+    if data.text 
+      .heading-txt!=data.text
+
+
+// Block complete txt and img
+
+
+mixin review-site(data)
+  .reviewSite.global-mb 
+    +heading({
+      title: data.title, 
+      text: data.text,
+			tag: data.tag
+    })
+    if data.img 
+      .reviewSite_img 
+        img(src=`i/complete/${data.img}.png` alt="")
+
+// End block

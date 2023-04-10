@@ -11,6 +11,22 @@
 	}
 }
 
+.grid-4 {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(23%, 1fr));
+	grid-gap: 6rem 3rem;
+	li {
+		margin-bottom: 0!important;
+	}
+
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+	}
+	@include bp($point_4) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+}
+
 .grid-2 {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
@@ -104,6 +120,11 @@
 	button, a, input[type="submit"] {
 		border: .1rem solid $dark-vio!important;
 		transition: all .2s ease;
+		color: $white;
+		font-size: 2rem;
+		@include bp($point_4) {
+			font-size: 1.6rem;
+		}
 		&:hover, &.current-page-item {
 			background-color: $trans!important;
 			border-color: #FFFFFF33!important;
@@ -138,5 +159,38 @@
 	padding: $m8 0;
 	@include bp($point_2) {
 		padding: $m6 0;
+	}
+}
+
+.global-mb8 {
+	margin: $m8 0;
+	@include bp($point_2) {
+		margin: $m6 0;
+	}
+}
+
+.fz20 {
+	font-size: 2rem;
+	font-family: $font_2;
+	line-height: 2.3rem;
+}
+
+.fz23 {
+	font-size: 2.3rem;
+	font-family: $font_3;
+	line-height: 2.6rem;
+}
+
+.pb8 {
+	padding-bottom: 8rem;
+	@include bp($point_2) {
+		padding-bottom: $m6;
+	}
+}
+
+.pt8 {
+	padding-top: 8rem;
+	@include bp($point_2) {
+		padding-top: $m6;
 	}
 }
