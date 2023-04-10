@@ -141,7 +141,7 @@ mixin singleHead(data)
           h1=data.title
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           if data.btn === true
-            .trigger_popup.btn.hover-btn-border.hover-btn-border
+            .trigger.btn.hover-btn-border.hover-btn-border(data-target="form")
               button(type="button" class="xxl") Оставить заявку
           if data.tag
             ul

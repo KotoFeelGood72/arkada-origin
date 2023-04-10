@@ -94,7 +94,7 @@
 		@include bp($point_2) {
 			margin: 0;
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
 			grid-gap: 5rem
 		}
 		li {
@@ -106,6 +106,9 @@
 					@include bp($point_2) {
 						width: 17rem;
 					}
+					@include bp($point_4) {
+						width: 100%;
+					}
 				}
 			}
 			&:nth-child(2) {
@@ -113,6 +116,9 @@
 					width: 30.8rem;
 					@include bp($point_2) {
 						width: 20rem;
+					}
+					@include bp($point_4) {
+						width: 100%;
 					}
 				}
 			}

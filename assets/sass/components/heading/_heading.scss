@@ -1,11 +1,17 @@
 .heading-title {
 	h2, h3, h4, h5, h6 {
 		margin-bottom: 3rem;
+		@include bp($point_2) {
+			margin-bottom: 1.5rem;
+		}
 	}
 }
 
 .heading-block {
 	margin-bottom: 6rem;
+	@include bp($point_2) {
+		margin-bottom: 4rem;
+	}
 }
 
 .heading-txt {
@@ -15,4 +21,13 @@
 .reviewSite_img {
 	border-radius: 2rem;
 	overflow: hidden;
+	@include bp($point_2) {
+		border-radius: 1rem;
+	}
+}
+
+.reviewSite  {
+	@include bp($point_2) {
+		padding: 3rem 0;
+	}
 }

@@ -1,4 +1,22 @@
 .seo-block--w {
+	// padding-bottom: 0;
+	@include bp($point_2) {
+		padding: 3rem 0;
+	}
+	
+	.seo-block {
+		@include bp($point_2) {
+			margin-top: -1rem;
+		}
+	}
+
+	// @include bp($point_2) {
+	// 	padding-top: 2rem;
+	// }
+
+	// @include bp($point_4) {
+	// 	padding-top: 1rem;
+	// }
 
 
 	h2, h3, h4, h5, h6 {
