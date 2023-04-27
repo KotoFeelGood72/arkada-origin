@@ -10,7 +10,16 @@ block content_block
 		btn: true,
 	})
 	section.single_body 
-		.section_in 
+		.section_in
+			include ./components/choice-card
+			.complete-banner.global-mb8(style="background: url('../i/banner.png')")
+					.complete_banner--content
+						h3 Заголовок для текста
+						p Просто кратко ответьте в опроснике ниже, для каких целей сайт - и мы подготовим несколько вариантов предложений с обоснованием,почему и сколько это стоит.
+						.btn-fill.hoverbtn-fill.trigger(data-target="form")
+							button(type="button" class="xxl btn") Оставить заявку
+			include components/image-card
+			
 			.single_body_main
 				+txt_block({
 					title: 'Привлечем клиентов с помощью рекламы'
@@ -20,24 +29,7 @@ block content_block
 					img: 'single/context_small',
 				})
 				.contextPackage.global-mb
-					h4.section_title Пакеты настройки рекламы 
-					ul.contextPackage_list.grid-3
-						-for(i = 0; i < 3; i++)
-							li 
-								.contextPackage_item_head 
-									p Ваш бюджет в неделю
-									span 5 000 - 10 000
-								p.small-title Вы получаете:
-								ul
-									-for(idx = 0; idx < 3; idx++)
-										- var oneLabel = ['Семантическое ядро', 'Мастер кампании', 'Ретаргетинг']
-										- var oneVal = ['100 ключей', '1 компания', 'есть']
-											li 
-												span!=oneLabel[idx]
-												span!=oneVal[idx]
-
-								.btn.contextPackage_link.hover-btn-border 
-									a(href="#" class="xl") Заказать
+					include ./components/card-number
 					p К каждому пакету настраивается: метрика, цели рекламы, скрипты для отслеживания пользователя. Также рекомендуем подключать Сквозную Аналитику.
 				.typeWork_block.global-mb 
 					.typeWork_block_head.section_title 

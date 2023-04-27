@@ -1,0 +1,18 @@
+h4.section_title Пакеты настройки рекламы 
+ul.contextPackage_list.grid-3
+	-for(i = 0; i < 3; i++)
+		li 
+			.contextPackage_item_head 
+				p Ваш бюджет в неделю
+				span 5 000 - 10 000
+			p.small-title Вы получаете:
+			ul
+				-for(idx = 0; idx < 3; idx++)
+					- var oneLabel = ['Семантическое ядро', 'Мастер кампании', 'Ретаргетинг']
+					- var oneVal = ['100 ключей', '1 компания', 'есть']
+						li 
+							span!=oneLabel[idx]
+							span!=oneVal[idx]
+
+			.btn.contextPackage_link.hover-btn-border 
+				a(href="#" class="xl") Заказать
