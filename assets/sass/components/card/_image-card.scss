@@ -1,0 +1,46 @@
+.imageCard_item--img {
+	margin-bottom: 3.5rem;
+}
+
+.image_card--item {
+	&:nth-child(1) {
+		.imageCard_item--img {
+			max-width: 8.7rem;
+		}
+	}
+	&:nth-child(2) {
+		.imageCard_item--img {
+			max-width: 14.4rem;
+		}
+	}
+	&:nth-child(3) {
+		.imageCard_item--img {
+			max-width: 9.1rem;	
+		}
+	}
+}
+
+.image_card--item {
+	background-color: $ultra-light;
+	padding: 3rem 4rem 6rem 4rem;
+	border-radius: 2rem;
+
+	@include bp($point_2) {
+		padding: 4rem 2rem;
+	}
+
+
+
+
+
+	p {
+		opacity: .7;
+	}
+
+
+	.fz23 {
+		font-family: $font_2;
+		margin-bottom: 2rem;
+		display: block;
+	}
+}

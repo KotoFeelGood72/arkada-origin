@@ -182,6 +182,7 @@
 		align-items: flex-start;
 		@include bp($point_4) {
 			padding: 3rem 2rem;
+			height: auto;
 		}
 		&:hover {
 			&:before {

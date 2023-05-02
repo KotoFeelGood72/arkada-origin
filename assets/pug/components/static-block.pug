@@ -1,0 +1,14 @@
+ul.static-list.customs-lists 
+	-for(idx = 0; idx < 3; idx++)
+		li.static-item
+			.static_item--content 
+				h3.fz30 697 заявок за октябрь 2022 года на септики, дренаж, отопление в Москве и МО
+				ul.p40 
+					each item in ['- 1334 ₽ средняя стоимость заявки;', '- 1702 ₽ стоимость назначенной встречи;', '- Средний чек 135.000 ₽;', '- Средняя конверсия сайтов: 4.8%.']
+						li=item
+				b Было сделано:
+				ul.custom_list
+					-for(i = 0; i < 4; i++)
+						li Технология успешно работает в 52+ нишах по всей России;
+			.static_item--img 
+				img(src="i/global/static.png", alt="")

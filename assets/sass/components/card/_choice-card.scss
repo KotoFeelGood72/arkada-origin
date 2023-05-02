@@ -1,0 +1,50 @@
+.choice_item {
+	background-color: $ultra-light;
+	border-radius: 2rem;
+	padding: 6rem 6rem 7.5rem 6rem;
+	@include bp($point_4) {
+		padding: 4rem 2rem;
+	}
+
+
+
+
+	span {
+		font-size: 2rem;
+		color: $light-vio;
+		font-family: $font_2;
+		display: block;
+		margin-bottom: 1.5rem;
+	}
+
+	.fz30 {
+		margin-bottom: 4rem;
+	}
+
+	ul {
+		&>li {
+			@include flex-start;
+			.choice_item--icon {
+				width: 4rem;
+				height: 4rem;
+				min-width: 4rem;
+				@include flex-center;
+				border-radius: 0.7rem;
+				margin-right: 2rem;
+				&.mode-failed {
+					background-color: $pink;
+					color: $white;
+				}
+				&.mode-success {
+					background-color: $green;
+					color: $dark;
+				}
+			}
+
+
+			&:not(:last-child) {
+				margin-bottom: 3rem!important;
+			}
+		}
+	}
+}

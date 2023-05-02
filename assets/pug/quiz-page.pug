@@ -1,0 +1,22 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Контекстная реклама'}
+block content_block
+	+bread(['Главная'], 'Бриф дизайн', title=false)
+	section.quiz 
+		.section_in
+			.quiz_main--w
+				.quiz_head 
+					h1 Бриф дизайн
+					p Максимально подробно заполненный бриф поможет получить сайт, который будет полностью соответствовать вашим ожиданиям. Все файлы для сайта можете предоставить ссылкой на Яндекс/Google диск
+				.quiz_main
+					.quiz_progress 
+						.quiz_percent 20%
+						.quiz_percentLine 
+					.quiz_form 
+						ul.quiz_steps 
+							li.quiz_step 
+								.quiz_stepHead 
+									h3 О компании и контакты
+								

@@ -1,0 +1,23 @@
+.callback-banner {
+	background-repeat: no-repeat!important;
+	background-position: right center!important;
+	background-size: cover!important;
+	min-height: 47.6rem;
+	padding: 11rem 5rem 11.6rem 11rem;
+
+	@include bp($point_4) {
+		background-position: 76% center!important;
+	}
+
+	.complete_banner--content {
+		max-width: 80rem;
+		.btn {
+			@include bp($point_4) {
+				background-color: $trans;
+			}
+		}
+	}
+	.complete_banner--content > p {
+		margin-bottom: 6rem;
+	}
+}

@@ -34,6 +34,7 @@ $(document).ready(function ($) {
 		pageWidget(['work-context']);
 		pageWidget(['work-development']);
 		pageWidget(['work-seo']);
+		pageWidget(['quiz-page']);
 		getAllClasses('html', '.elements_list');
 	}
 });
@@ -182,6 +183,23 @@ const partnerSlider = new Swiper('.partners_slider', {
 		1024: {
 			slidesPerView: 5,
 			spaceBetween: 90,
+		}
+	}
+})
+
+const serviceSlider = new Swiper('.service-slider', {
+	navigation: {
+		nextEl: '.serviceSlider_btn_next',
+		prevEl: '.serviceSlider_btn_prev',
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 30,
+		},
+		1024: {
+			slidesPerView: 3,
+			spaceBetween: 29,
 		}
 	}
 })

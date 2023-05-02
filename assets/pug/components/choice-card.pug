@@ -1,12 +1,24 @@
-ul.choice-list
+ul.choice-list.grid-2
 	-for(idx = 0; idx < 2; idx++)
 		- let icon = ['failed', 'success']
 		- let title = ['Найти фрилансера', 'Обратиться в компанию']
-		li.choice_item 
-			span Что если...
-			h3=title[idx]
-			ul 
-				-for(i = 0; i < 3; i++)
-					li
-						+icon(icon[idx])
-						p Никаких гарантий и «волшебные» обещания, а на деле наблюдаете слив бюджета
+		if idx != 0
+			li.choice_item.succes_card--mode 
+				span Что если...
+				h3.fz30=title[idx]
+				ul 
+					-for(i = 0; i < 3; i++)
+						li
+							.choice_item--icon(class=`mode-${icon[idx]}`)
+								+icon(icon[idx])
+							p Никаких гарантий и «волшебные» обещания, а на деле наблюдаете слив бюджета
+		else 
+			li.choice_item 
+				span Что если...
+				h3.fz30=title[idx]
+				ul 
+					-for(i = 0; i < 3; i++)
+						li
+							.choice_item--icon(class=`mode-${icon[idx]}`)
+								+icon(icon[idx])
+							p Никаких гарантий и «волшебные» обещания, а на деле наблюдаете слив бюджета

@@ -1,0 +1,35 @@
+.default_card--list {
+	counter-reset: item;
+}
+.default_card--item {
+	background-color: $ultra-light;
+	padding: 9.5rem 4rem 8.3rem 4rem;
+	border-radius: 2rem;
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		counter-increment: item;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 7.5rem;
+		height: 7.1rem;
+		content: '0' counter(item);
+		font-size: 3rem;
+		font-family: $font_2;
+		line-height: 4.6rem;
+		background-color: $dark-vio;
+		@include flex-center;
+		border-bottom-right-radius: 2rem;
+		@include bp($point_4) {
+			display: none;
+		}
+	}
+
+	p, span, b {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}

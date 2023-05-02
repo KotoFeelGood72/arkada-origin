@@ -1,0 +1,97 @@
+.steps_block--item {
+	@include flex-space;
+	position: relative;
+
+	counter-increment: item;
+
+	@include bp($point_2) {
+		overflow: hidden;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2) {
+			margin-bottom: 4rem;
+		}
+	}
+
+	.fz30 {
+		margin-bottom: 4rem;
+		&:before {
+			content: '0' counter(item);
+			color: $light-vio;
+			font-size: 4rem;
+			font-family: $font_2;
+			margin-right: 2rem;
+		}
+	}
+	.stepsBlock_item--content, .stepsBlock_item--img {
+		width: 49%;
+
+		@include bp($point_2) {
+			width: 100%;
+		}
+	}
+
+	&:nth-child(2n + 1) {
+		.stepsBlock_item--content {
+			order: 2;
+		}
+		.stepsBlock_item--img {
+			order: 1;
+		}
+	}
+
+	ul {
+		&>li {
+			opacity: .7;
+			font-size: 2rem;
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+			&:before {
+				content: '• ';
+				margin-right: 0.3rem;
+			}
+		}
+	}
+}
+
+.stepsItem_icon {
+	display: none;
+}
+
+
+.stepsBlock_item--content {
+	background-color: $ultra-light;
+	border-radius: 2rem;
+	min-height: 50.6rem;
+	padding: 6rem 8rem 15.2rem 6rem;
+	border-radius: 2rem;
+
+	@include bp($point_2) {
+		position: relative;
+		z-index: 2;
+		padding: 4rem 2rem;
+		min-height: auto;
+	}
+}
+
+.stepsBlock_item--img {
+	@include flex-center;
+
+	@include bp($point_2) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: auto;
+		opacity: .2;
+	}
+	img {
+		width: auto;
+	}
+}
+
+.steps-block {
+	counter-reset: item;
+}
