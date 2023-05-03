@@ -18,7 +18,7 @@ $(document).ready(function ($) {
 	checkSubmenu();
 	rotateCard();
 	visibleSeo();
-
+	stepForm();
 	if(devStatus) {
 		pageWidget(['index']);
 		pageWidget(['about-page']);
@@ -389,6 +389,153 @@ function createArrow() {
 		}
 	})
 }
+
+
+
+function stepForm() {
+	let currentStep = 0;
+
+	const formSteps = document.querySelectorAll('.quiz_step');
+	const nextButton = document.querySelector('.next-step');
+	const prevButton = document.querySelector('.prev-step');
+
+	formSteps[0].style.display = "block";
+
+
+
+	function goToNextStep() {
+		formSteps[currentStep].style.display = 'none';
+		currentStep += 1;
+		if (currentStep >= formSteps.length) {
+			return;
+		}
+		formSteps[currentStep].style.display = 'block';
+		updateProgress();
+		if (currentStep === formSteps.length - 1) {
+			let btn = nextButton.querySelector('button')
+
+			nextButton.classList.remove('next-step')
+			// setTimeout(() => {
+
+				btn.type = 'submit'
+				btn.innerHTML = "Отправить"
+
+				btn.addEventListener('click', (e) => {
+					e.preventDefault();
+					sendForm(btn)
+				}) 
+			// }, 100)
+		}
+	}
+
+	function goToPrevStep() {
+		formSteps[currentStep].style.display = 'none';
+		currentStep -= 1;
+		formSteps[currentStep].style.display = 'block';
+		updateProgress();
+		nextButton.style.display = 'block';
+		let btn = nextButton.querySelector('button')
+
+		nextButton.classList.add('next-step')
+		// setTimeout(() => {
+
+			btn.type = 'button'
+			btn.innerHTML = "Далее"
+	}
+
+	nextButton.addEventListener('click', () => {
+		if (validateForm()) {
+			goToNextStep();
+		}
+
+	});
+
+	prevButton.addEventListener('click', () => {
+		goToPrevStep();
+	});
+
+	function updateProgress() {
+		const formSteps = document.querySelectorAll('.quiz_step');
+		const progressBar = document.querySelector('.quiz_percentLine');
+	
+		const progressStep = Math.ceil((currentStep + 1) / formSteps.length * 100);
+		progressBar.style.width = `${progressStep}%`;
+		progressBar.setAttribute('data-percent', `${progressStep}%`);
+	}
+
+	updateProgress();
+}
+
+function validateForm() {
+  let inputCompany = document.querySelector('#quiz-company');
+  let inputName = document.querySelector('#quiz-people');
+  let inputNumber = document.querySelector('#quiz-number');
+	const inputsToValidate = [inputCompany, inputName, inputNumber];
+	
+	if (valid(inputsToValidate)) {
+		return true;
+	}
+  
+}
+
+
+function valid(inputs) {
+  let isAllValid = true;
+  for (let i = 0; i < inputs.length; i++) {
+    const input = inputs[i];
+		if(input) {
+			if (input.value.trim() === '') {
+				input.classList.add('no-valid');
+
+				isAllValid = false;
+			} else {
+				input.classList.remove('no-valid');
+			}
+		}
+	}
+	return isAllValid;
+}
+
+
+function sendForm(submitButton) {
+	submitButton.addEventListener('click', () => {
+		const formData = {
+			company: document.querySelector('#quiz-company').value,
+			name: document.querySelector('#quiz-people').value,
+			number: document.querySelector('#quiz-number').value,
+			websiteType: document.querySelector('input[name="typeWebsite"]:checked').value,
+			addWebsite: Array.from(document.querySelectorAll('input[name="addWebsite"]:checked')).map(checkbox => checkbox.value)
+		};
+		sendData(formData);
+	});
+}
+
+function sendData(data) {
+  const url = 'https://example.com/submit-form';
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  };
+  
+  fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        console.log('Form submitted successfully');
+        window.location.href = 'https://example.com/thank-you'; 
+      } else {
+        console.error('Error submitting form');
+      }
+    })
+    .catch(error => {
+      console.error('Error submitting form:', error);
+    });
+}
+
+
+
 
 
 

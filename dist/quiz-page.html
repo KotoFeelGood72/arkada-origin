@@ -106,17 +106,120 @@
               </div>
               <div class="quiz_main">
                 <div class="quiz_progress"> 
-                  <div class="quiz_percent">20%</div>
-                  <div class="quiz_percentLine"> </div>
+                  <div class="quiz_percentLine" data-percent="20%"> </div>
                 </div>
-                <div class="quiz_form"> 
-                  <ul class="quiz_steps"> 
-                    <li class="quiz_step"> 
-                      <div class="quiz_stepHead"> 
-                        <h3>О компании и контакты</h3>
+                <div class="quiz_form">
+                  <form class="form-step" action="#"> 
+                    <ul class="quiz_steps"> 
+                      <li class="quiz_step"> 
+                        <div class="quiz_stepHead"> 
+                          <h3 class="fz30">О компании и контакты</h3>
+                        </div>
+                        <div class="quiz_input--group">
+                          <div class="full_input--w global_input"> 
+                            <label class="fz20" for="quiz-company">
+                              <div class="label-w">
+                                <p>Название компании</p><span>*</span>
+                              </div>
+                            </label>
+                            <div class="full_input"> 
+                              <input class="qui-company" type="text" id="quiz-company" required="required" autocomplete="false"/>
+                            </div>
+                          </div>
+                          <div class="full_input--w global_input"> 
+                            <label class="fz20" for="quiz-people">
+                              <div class="label-w">
+                                <p>Контактное лицо (должность)</p><span>*</span>
+                              </div><span>Укажите ФИО контактного лица и его должность. Мы будем связываться с этим человеком для уточнения информации и утверждения этапов</span>
+                            </label>
+                            <div class="full_input"> 
+                              <input class="qui-people" type="text" id="quiz-people" required="required" autocomplete="false"/>
+                            </div>
+                          </div>
+                          <div class="full_input--w global_input"> 
+                            <label class="fz20" for="quiz-number">
+                              <div class="label-w">
+                                <p>Номер телефона</p><span>*</span>
+                              </div>
+                            </label>
+                            <div class="full_input"> 
+                              <input class="qui-number" type="tel" id="quiz-number" required="required" autocomplete="false"/>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="quiz_step"> 
+                        <div class="quiz_stepHead"> 
+                          <h3 class="fz30">Сайт</h3>
+                        </div>
+                        <div class="check_inputs--w">
+                          <p class="fz20">Тип сайта</p><span>Место для будущего комментария</span>
+                          <ul class="check_input--group grid-2">
+                            <li class="check_input--item radio-type"> 
+                              <input type="radio" id="typeCheck-0" name="typeWebsite" checked required>
+                              <label for="typeCheck-0">Лендинг</label>
+                            </li>
+                            <li class="check_input--item radio-type"> 
+                              <input type="radio" id="typeCheck-1" name="typeWebsite" required>
+                              <label for="typeCheck-1">Корпоративный сайт</label>
+                            </li>
+                            <li class="check_input--item radio-type"> 
+                              <input type="radio" id="typeCheck-2" name="typeWebsite" required>
+                              <label for="typeCheck-2">Сайт-визитка</label>
+                            </li>
+                            <li class="check_input--item radio-type"> 
+                              <input type="radio" id="typeCheck-3" name="typeWebsite" required>
+                              <label for="typeCheck-3">Каталог</label>
+                            </li>
+                            <li class="check_input--item radio-type"> 
+                              <input type="radio" id="typeCheck-4" name="typeWebsite" required>
+                              <label for="typeCheck-4">Интернет-магазин</label>
+                            </li>
+                            <li class="check_input--item radio-type"> 
+                              <input type="radio" id="typeCheck-5" name="typeWebsite" required>
+                              <label for="typeCheck-5">Сервис</label>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="check_inputs--w">
+                          <p class="fz20">Материалы для сайта, которые у вас есть</p>
+                          <ul class="check_input--group grid-2">
+                            <li class="check_input--item check-type"> 
+                              <input type="checkbox" id="materialCheck-0" checked name="addWebsite">
+                              <label for="materialCheck-0">Логотип</label>
+                            </li>
+                            <li class="check_input--item check-type"> 
+                              <input type="checkbox" id="materialCheck-1" name="addWebsite">
+                              <label for="materialCheck-1">Фирменный стиль</label>
+                            </li>
+                            <li class="check_input--item check-type"> 
+                              <input type="checkbox" id="materialCheck-2" name="addWebsite">
+                              <label for="materialCheck-2">Фотографии продукта/услуги</label>
+                            </li>
+                            <li class="check_input--item check-type"> 
+                              <input type="checkbox" id="materialCheck-3" name="addWebsite">
+                              <label for="materialCheck-3">Видеоролики о продукте/услуге</label>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="quiz_form--bottom"> 
+                      <p>*Поля, отмеченные “*” обязательны для заполнения</p>
+                      <div class="quiz_formBottom--btn">
+                        <div class="btn_parent"> 
+                          <div class="btn-border btn hover-btn-border prev-step"> 
+                            <button class="xxl" type="button">Назад</button>
+                          </div>
+                        </div>
+                        <div class="btn_parent">
+                          <div class="btn btn-fill hover-btn-fill next-step">
+                            <button class="xxl" type="button">Далее</button>
+                          </div>
+                        </div>
                       </div>
-                    </li>
-                  </ul>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>

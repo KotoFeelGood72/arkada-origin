@@ -12,11 +12,65 @@ block content_block
 					p Максимально подробно заполненный бриф поможет получить сайт, который будет полностью соответствовать вашим ожиданиям. Все файлы для сайта можете предоставить ссылкой на Яндекс/Google диск
 				.quiz_main
 					.quiz_progress 
-						.quiz_percent 20%
-						.quiz_percentLine 
-					.quiz_form 
-						ul.quiz_steps 
-							li.quiz_step 
-								.quiz_stepHead 
-									h3 О компании и контакты
-								
+						.quiz_percentLine(data-percent="20%") 
+					.quiz_form
+						form.form-step(action="#")  
+							ul.quiz_steps 
+								li.quiz_step 
+									.quiz_stepHead 
+										h3.fz30 О компании и контакты
+									.quiz_input--group
+										+full-input({
+											id: 'company',
+											name: 'Название компании',
+										})
+										+full-input({
+											id: 'people',
+											name: 'Контактное лицо (должность)',
+											txt: 'Укажите ФИО контактного лица и его должность. Мы будем связываться с этим человеком для уточнения информации и утверждения этапов'
+										})
+										+full-input({
+											id: 'number',
+											name: 'Номер телефона',
+											type: 'tel'
+										})
+								li.quiz_step 
+									.quiz_stepHead 
+										h3.fz30 Сайт
+									.check_inputs--w
+										p.fz20 Тип сайта
+										span Место для будущего комментария
+										ul.check_input--group.grid-2
+											-for(i = 0; i < 6; i++)
+												- label = ['Лендинг', 'Корпоративный сайт', 'Сайт-визитка', 'Каталог', 'Интернет-магазин', 'Сервис']
+													if i === 0
+														li.check_input--item.radio-type 
+															input(type="radio" id=`typeCheck-${i}` name="typeWebsite" checked required)
+															label(for=`typeCheck-${i}`)=label[i]
+													else 
+														li.check_input--item.radio-type 
+															input(type="radio" id=`typeCheck-${i}` name="typeWebsite" required)
+															label(for=`typeCheck-${i}`)=label[i]
+									.check_inputs--w
+										p.fz20 Материалы для сайта, которые у вас есть
+										ul.check_input--group.grid-2
+											-for(i = 0; i < 4; i++)
+												- label = ['Логотип', 'Фирменный стиль', 'Фотографии продукта/услуги', 'Видеоролики о продукте/услуге']
+													if i === 0
+														li.check_input--item.check-type 
+															input(type="checkbox" id=`materialCheck-${i}` checked name="addWebsite")
+															label(for=`materialCheck-${i}`)=label[i]
+													else 
+														li.check_input--item.check-type 
+															input(type="checkbox" id=`materialCheck-${i}` name="addWebsite")
+															label(for=`materialCheck-${i}`)=label[i]
+							.quiz_form--bottom 
+								p *Поля, отмеченные “*” обязательны для заполнения
+								.quiz_formBottom--btn
+									.btn_parent 
+										.btn-border.btn.hover-btn-border.prev-step 
+											button(type="button" class="xxl") Назад
+									.btn_parent
+										.btn.btn-fill.hover-btn-fill.next-step
+											button(type="button" class="xxl") Далее
+											
